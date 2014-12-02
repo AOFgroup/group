@@ -6,12 +6,12 @@ namespace HostelPro.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("HostelName")]
-    public partial class HostelName
+    [Table("HostelRole")]
+    public partial class HostelRole
     {
-        public HostelName()
+        public HostelRole()
         {
-            HostelNameToCities = new HashSet<HostelNameToCity>();
+            Customers = new HashSet<Customer>();
         }
 
         public Guid ID { get; set; }
@@ -20,6 +20,6 @@ namespace HostelPro.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        public virtual ICollection<HostelNameToCity> HostelNameToCities { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
     }
 }

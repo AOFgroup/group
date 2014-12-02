@@ -9,11 +9,11 @@ namespace HostelPro.Models
     [Table("HostelNameToCity")]
     public partial class HostelNameToCity
     {
-        public int ID { get; set; }
+        public Guid ID { get; set; }
 
-        public int HostelNameId { get; set; }
+        public Guid HostelNameId { get; set; }
 
-        public int CityId { get; set; }
+        public Guid CityId { get; set; }
 
         public virtual City City { get; set; }
 

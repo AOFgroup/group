@@ -14,7 +14,7 @@ namespace HostelPro.Models
             Bookings = new HashSet<Booking>();
         }
 
-        public int ID { get; set; }
+        public Guid ID { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -26,6 +26,18 @@ namespace HostelPro.Models
         [StringLength(255)]
         public string Email { get; set; }
 
+        [Required]
+        [StringLength(255)]
+        public string Hash { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string Salt { get; set; }
+
+        public Guid? HostelRoleId { get; set; }
+
         public virtual ICollection<Booking> Bookings { get; set; }
+
+        public virtual HostelRole HostelRole { get; set; }
     }
 }

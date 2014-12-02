@@ -9,11 +9,11 @@ namespace HostelPro.Models
     [Table("Booking")]
     public partial class Booking
     {
-        public int ID { get; set; }
+        public Guid ID { get; set; }
 
-        public int RoomId { get; set; }
+        public Guid RoomId { get; set; }
 
-        public int CustomerId { get; set; }
+        public Guid CustomerId { get; set; }
 
         public DateTime? DateStart { get; set; }
 

@@ -15,7 +15,7 @@ namespace HostelPro.Models
             HostelNameToCities = new HashSet<HostelNameToCity>();
         }
 
-        public int ID { get; set; }
+        public Guid ID { get; set; }
 
         [Column("CITY")]
         [Required]

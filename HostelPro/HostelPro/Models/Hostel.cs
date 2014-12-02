@@ -14,13 +14,13 @@ namespace HostelPro.Models
             Rooms = new HashSet<Room>();
         }
 
-        public int ID { get; set; }
+        public Guid ID { get; set; }
 
         [Required]
         [StringLength(255)]
         public string Address { get; set; }
 
-        public int CityId { get; set; }
+        public Guid CityId { get; set; }
 
         public int Phone { get; set; }
 

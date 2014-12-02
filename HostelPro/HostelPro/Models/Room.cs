@@ -14,11 +14,11 @@ namespace HostelPro.Models
             Bookings = new HashSet<Booking>();
         }
 
-        public int ID { get; set; }
+        public Guid ID { get; set; }
 
         public int BedNumber { get; set; }
 
-        public int HostelId { get; set; }
+        public Guid HostelId { get; set; }
 
         public decimal Price { get; set; }
 

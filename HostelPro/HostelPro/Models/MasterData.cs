@@ -5,10 +5,10 @@ namespace HostelPro.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class DataMaster : DbContext
+    public partial class MasterData : DbContext
     {
-        public DataMaster()
-            : base("name=DataMaster")
+        public MasterData()
+            : base("name=MasterData")
         {
         }
 
@@ -18,6 +18,7 @@ namespace HostelPro.Models
         public virtual DbSet<Hostel> Hostels { get; set; }
         public virtual DbSet<HostelName> HostelNames { get; set; }
         public virtual DbSet<HostelNameToCity> HostelNameToCities { get; set; }
+        public virtual DbSet<HostelRole> HostelRoles { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -42,6 +43,14 @@ namespace HostelPro.Models
 
             modelBuilder.Entity<Customer>()
                 .Property(e => e.Email)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Customer>()
+                .Property(e => e.Hash)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Customer>()
+                .Property(e => e.Salt)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Customer>()
@@ -74,6 +83,10 @@ namespace HostelPro.Models
                 .HasMany(e => e.HostelNameToCities)
                 .WithRequired(e => e.HostelName)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<HostelRole>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Room>()
                 .Property(e => e.Price)

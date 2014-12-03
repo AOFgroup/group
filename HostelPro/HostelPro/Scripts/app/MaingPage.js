@@ -1,37 +1,94 @@
 ﻿$(document).ready(function () {
-    var window = $("#window"),
+   
+
+    function login() {
+        $('#window').css("display", "block");
+        var window = $("#window"),
         undo = $("#login")
                 .bind("click", function () {
-                   // window.data("kendoWindow").open();
+                    window.data("kendoWindow").open();
                     undo.hide();
                 });
 
-    var onClose = function () {
-        undo.show();
-        
+        var onClose = function () {
+            undo.show();
+
+        }
+
+        if (!window.data("kendoWindow")) {
+            window.kendoWindow({
+                width: "15%",
+                title: "LogIn",
+                actions: [
+                    "Pin",
+                    "Minimize",
+                    "Maximize",
+                    "Close"
+                ],
+                position: {
+
+                    top: 58,
+                    left: 735
+                },
+                close: onClose
+            });
+        }
+
+
 
     }
 
-    if (!window.data("kendoWindow")) {
-        window.kendoWindow({
-            width: "15%",
-            title: "LogIn",
-            actions: [
-                "Pin",
-                "Minimize",
-                "Maximize",
-                "Close"
-            ],
-            position:{
+    
+    function register() {
+     
+        $('.k-window').hide()
+     
+        $('#window2').css("display", "block");
+        var win = $("#window2"),
+        un = $("#register")
+                .bind("click", function () {
+                    win.data("kendoWindow").open();
+                    un.hide();
+                });
 
-                top:58,
-                left:735
-            },
-            close: onClose
-        });
+        var onClose = function () {
+            un.show();
+
+        }
+
+        if (!win.data("kendoWindow")) {
+            win.kendoWindow({
+                width: "15%",
+                title: "Create account",
+                actions: [
+                    "Pin",
+                    "Minimize",
+                    "Maximize",
+                    "Close"
+                ],
+                position: {
+
+                    top: 58,
+                    left: 735
+                },
+                close: onClose
+            });
+        }
+
+
+     
     }
 
-    //$('#register').click(onClose);
+    function hide()
+    {
+      
+     $('.k-window').hide()
+
+       
+    }
 
 
+    $('#login').click(login);
+    $('#register').click(register);
+    $('#btn-login').click(register);
 });

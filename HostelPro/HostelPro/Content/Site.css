@@ -105,9 +105,10 @@ textarea {
   margin-left:10em;
 
 }
-#window2,#window
-{
-    visibility:hidden;
 
+#window,#window2
+{
+
+    display:none;
 
 }

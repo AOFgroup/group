@@ -10,18 +10,27 @@
         @Html.Kendo().TextBoxFor(c => c.Hash)
         <br />
         <br />
-        <input type="button" class="btn btn-default" value="Rgister" id="register" />
+        <input type="button" class="btn btn-default" value="Register" id="register" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="button" class="btn btn-default" value="Login" />
         <br />
         <br />
         </div>
     <div id="btn1">
-     <div class="window2">
-
-
-
-
+     <div id="window2">
+         @Html.Kendo().TextBoxFor(c=>c.Name)
+         <br /><br />
+         @Html.Kendo().TextBoxFor(c => c.Hash)
+         <br /><br />
+         @Html.Kendo().TextBoxFor(c => c.Email)
+         <br /><br />
+         @Html.Kendo().NumericTextBoxFor(c=>c.Phone)
+         <br /><br />
+         @*<input type="button" class="btn btn-default" value="Login" id="loginBtn" />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*@
+         <input type="button" id="btn-login" class="btn btn-default" value="Register" />
+         <br />
+         <br />
      </div>
         @(Html.Kendo().MobileView()
     .Name("button-view")

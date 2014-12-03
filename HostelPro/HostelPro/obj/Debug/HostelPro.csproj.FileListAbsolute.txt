@@ -56,4 +56,3 @@ C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspN
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\obj\Debug\HostelPro.csprojResolveAssemblyReference.cache

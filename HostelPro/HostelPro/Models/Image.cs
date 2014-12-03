@@ -6,20 +6,16 @@ namespace HostelPro.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("HostelRole")]
-    public partial class HostelRole
+    [Table("Image")]
+    public partial class Image
     {
-        public HostelRole()
-        {
-            Customers = new HashSet<Customer>();
-        }
-
         public int ID { get; set; }
 
-        [Required]
         [StringLength(255)]
-        public string Name { get; set; }
+        public string Pic { get; set; }
 
-        public virtual ICollection<Customer> Customers { get; set; }
+        public int? HostelId { get; set; }
+
+        public virtual Hostel Hostel { get; set; }
     }
 }

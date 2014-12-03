@@ -11,16 +11,20 @@ namespace HostelPro.Models
     {
         public Hostel()
         {
-            Rooms = new HashSet<Room>();
+            HostelToRoms = new HashSet<HostelToRom>();
+            Images = new HashSet<Image>();
         }
 
-        public Guid ID { get; set; }
+        public int ID { get; set; }
+
+        [StringLength(255)]
+        public string Name { get; set; }
 
         [Required]
         [StringLength(255)]
         public string Address { get; set; }
 
-        public Guid CityId { get; set; }
+        public int? ZIP { get; set; }
 
         public int Phone { get; set; }
 
@@ -34,6 +38,8 @@ namespace HostelPro.Models
 
         public virtual City City { get; set; }
 
-        public virtual ICollection<Room> Rooms { get; set; }
+        public virtual ICollection<HostelToRom> HostelToRoms { get; set; }
+
+        public virtual ICollection<Image> Images { get; set; }
     }
 }

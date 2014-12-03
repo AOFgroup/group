@@ -146,14 +146,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BED.cs" />
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\BookingBed.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Hostel.cs" />
-    <Compile Include="Models\HostelName.cs" />
-    <Compile Include="Models\HostelNameToCity.cs" />
     <Compile Include="Models\HostelRole.cs" />
-    <Compile Include="Models\MasterData.cs" />
+    <Compile Include="Models\HostelToRom.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\MasteData.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

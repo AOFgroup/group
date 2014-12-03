@@ -16,7 +16,7 @@ namespace HostelPro.Models
             Bookings = new HashSet<Booking>();
         }
 
-        public Guid ID { get; set; }
+        public int ID { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -36,13 +36,11 @@ namespace HostelPro.Models
         [StringLength(255)]
         public string Salt { get; set; }
 
-        public Guid? HostelRoleId { get; set; }
+        public int? HostelRoleId { get; set; }
 
         public virtual ICollection<Booking> Bookings { get; set; }
 
-        public virtual HostelRole HostelRole { get; set; }
-
-        public string HashPassword(string password)
+        public virtual HostelRole HostelRole { get; set; }          public string HashPassword(string password)
         {
             var saltedPass = string.Concat(password, Salt);
             var sha256 = new SHA256Managed();
@@ -51,25 +49,19 @@ namespace HostelPro.Models
             return Convert.ToBase64String(hash);
         }
 
-        public string GenerateSalt()
-        {
-            var random = new RNGCryptoServiceProvider();
-            var salt = new Byte[8];
-            random.GetBytes(salt);
-            return Convert.ToBase64String(salt);
-        }
+          public string GenerateSalt()
+          {
+              var random = new RNGCryptoServiceProvider();
+              var salt = new Byte[8];
+              random.GetBytes(salt);
+              return Convert.ToBase64String(salt);
+          }
 
-        public bool ValidatePassword(string password)
-        {
-            var hash = HashPassword(password);
-            return string.Equals(Hash, hash);
-        }
-
-
-
-
-
-
+          public bool ValidatePassword(string password)
+          {
+              var hash = HashPassword(password);
+              return string.Equals(Hash, hash);
+          }
 
 
     }

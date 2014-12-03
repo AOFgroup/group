@@ -11,21 +11,16 @@ namespace HostelPro.Models
     {
         public Room()
         {
-            Bookings = new HashSet<Booking>();
+            BEDs = new HashSet<BED>();
+            HostelToRoms = new HashSet<HostelToRom>();
         }
 
-        public Guid ID { get; set; }
+        public int ID { get; set; }
 
         public int BedNumber { get; set; }
 
-        public Guid HostelId { get; set; }
+        public virtual ICollection<BED> BEDs { get; set; }
 
-        public decimal Price { get; set; }
-
-        public bool PetAllow { get; set; }
-
-        public virtual ICollection<Booking> Bookings { get; set; }
-
-        public virtual Hostel Hostel { get; set; }
+        public virtual ICollection<HostelToRom> HostelToRoms { get; set; }
     }
 }

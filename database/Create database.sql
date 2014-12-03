@@ -1,63 +1,79 @@
 CREATE TABLE HostelRole
 (
-  ID uniqueidentifier  NOT NULL PRIMARY KEY,
+  ID INT IDENTITY(1,1)  NOT NULL PRIMARY KEY,
   Name varchar(255) NOT NULL,
 )
 CREATE TABLE Customer
 (
-ID uniqueidentifier  NOT NULL PRIMARY KEY,
+ID INT IDENTITY(1,1)  NOT NULL PRIMARY KEY,
 Name varchar(255) NOT NULL,
 Phone int NOT NULL,
 Email varchar(255) NOT NULL,
 [Hash] varchar(255) NOT NULL,
 Salt varchar(255)NOT NULL,
-HostelRoleId uniqueidentifier  FOREIGN KEY REFERENCES HostelRole(ID)
+HostelRoleId INT  FOREIGN KEY REFERENCES HostelRole(ID)
 )
 
 CREATE TABLE City
 (
-ID uniqueidentifier  NOT NULL PRIMARY KEY,
+ZIP int NOT NULL IDENTITY PRIMARY KEY,
 CITY varchar(255) NOT NULL,
-ZIP int NOT NULL,
 )
+
 CREATE TABLE Hostel
 (
-ID uniqueidentifier  NOT NULL PRIMARY KEY,
+ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+Name varchar(255),
 [Address] varchar(255) NOT NULL,
-CityId uniqueidentifier FOREIGN KEY REFERENCES City (ID) NOT NULL,
+ZIP INT FOREIGN KEY REFERENCES City(ZIP),
 Phone int NOT NULL,
 Email varchar(255) NOT NULL,
 Information varchar(255) NOT NULL,
+
 )
+CREATE table [Image]
+(
+  ID int identity (1,1) not null Primary key,
+  Pic nvarchar(255),
+  HostelId int foreign key references Hostel(ID) 
+)
+
 CREATE TABLE Room
 (
-ID uniqueidentifier  NOT NULL PRIMARY KEY,
+ID INT IDENTITY  NOT NULL PRIMARY KEY,
 BedNumber int NOT NULL,
-HostelId uniqueidentifier FOREIGN KEY REFERENCES Hostel (ID) NOT NULL,
-Price decimal NOT NULL,
-PetAllow bit NOT NULL
+HostelId INT FOREIGN KEY REFERENCES Hostel (ID) NOT NULL,
 )
-CREATE TABLE HostelName
+CREATE TABLE HostelToRom
 (
-ID uniqueidentifier  NOT NULL PRIMARY KEY,
-Name varchar(255) NOT NULL,
+ID int identity (1,1)  NOT NULL PRIMARY KEY,
+RoomID INT NOT NULL foreign key references Room(ID),
+HostelId int NOT NULL foreign key references Hostel(ID)
 )
-
-CREATE TABLE HostelNameToCity
+CREATE TABLE BED
 (
-ID uniqueidentifier  NOT NULL PRIMARY KEY,
-HostelNameId uniqueidentifier FOREIGN KEY REFERENCES HostelName (ID) NOT NULL,
-CityId uniqueidentifier FOREIGN KEY REFERENCES City (ID) NOT NULL,
-)
+ ID int identity (1,1) NOT NULL Primary Key,
+ Price decimal,
+ RoomId int foreign key references Room(ID) 
 
+)
 CREATE TABLE Booking
 (
-ID uniqueidentifier  NOT NULL PRIMARY KEY,
-RoomId uniqueidentifier FOREIGN KEY REFERENCES Room (ID) NOT NULL,
-CustomerId uniqueidentifier FOREIGN KEY REFERENCES Customer (ID) NOT NULL,
-DateStart datetime,
-DateEnd datetime,
-Commets nvarchar(255),
-[Status] bit
+ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+CustomerId INT FOREIGN KEY REFERENCES Customer (ID) NOT NULL,
+TotalSum decimal not null,
+BookingDate datetime
 )
+
+CREATE TABLE BookingBed
+(
+ ID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+ BedId int NOT NULL,
+ BookingId int NOT NULL FOREIGN KEY REFERENCES Booking(ID),
+ Amount int,
+ DateStart datetime,
+ DateEnd datetime,
+)
+
+
 

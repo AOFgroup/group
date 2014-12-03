@@ -9,23 +9,21 @@ namespace HostelPro.Models
     [Table("Booking")]
     public partial class Booking
     {
-        public Guid ID { get; set; }
+        public Booking()
+        {
+            BookingBeds = new HashSet<BookingBed>();
+        }
 
-        public Guid RoomId { get; set; }
+        public int ID { get; set; }
 
-        public Guid CustomerId { get; set; }
+        public int CustomerId { get; set; }
 
-        public DateTime? DateStart { get; set; }
+        public decimal TotalSum { get; set; }
 
-        public DateTime? DateEnd { get; set; }
-
-        [StringLength(255)]
-        public string Commets { get; set; }
-
-        public bool? Status { get; set; }
+        public DateTime? BookingDate { get; set; }
 
         public virtual Customer Customer { get; set; }
 
-        public virtual Room Room { get; set; }
+        public virtual ICollection<BookingBed> BookingBeds { get; set; }
     }
 }

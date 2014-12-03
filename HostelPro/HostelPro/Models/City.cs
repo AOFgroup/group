@@ -12,20 +12,16 @@ namespace HostelPro.Models
         public City()
         {
             Hostels = new HashSet<Hostel>();
-            HostelNameToCities = new HashSet<HostelNameToCity>();
         }
 
-        public Guid ID { get; set; }
+        [Key]
+        public int ZIP { get; set; }
 
         [Column("CITY")]
         [Required]
         [StringLength(255)]
         public string CITY1 { get; set; }
 
-        public int ZIP { get; set; }
-
         public virtual ICollection<Hostel> Hostels { get; set; }
-
-        public virtual ICollection<HostelNameToCity> HostelNameToCities { get; set; }
     }
 }

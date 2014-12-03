@@ -5,37 +5,42 @@ namespace HostelPro.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class MasterData : DbContext
+    public partial class MasteData : DbContext
     {
-        public MasterData()
-            : base("name=MasterData")
+        public MasteData()
+            : base("name=MasteData")
         {
         }
 
+        public virtual DbSet<BED> BEDs { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
+        public virtual DbSet<BookingBed> BookingBeds { get; set; }
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Hostel> Hostels { get; set; }
-        public virtual DbSet<HostelName> HostelNames { get; set; }
-        public virtual DbSet<HostelNameToCity> HostelNameToCities { get; set; }
         public virtual DbSet<HostelRole> HostelRoles { get; set; }
+        public virtual DbSet<HostelToRom> HostelToRoms { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<BED>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Booking>()
+                .Property(e => e.TotalSum)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Booking>()
+                .HasMany(e => e.BookingBeds)
+                .WithRequired(e => e.Booking)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<City>()
                 .Property(e => e.CITY1)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<City>()
-                .HasMany(e => e.Hostels)
-                .WithRequired(e => e.City)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<City>()
-                .HasMany(e => e.HostelNameToCities)
-                .WithRequired(e => e.City)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Customer>()
                 .Property(e => e.Name)
@@ -59,6 +64,10 @@ namespace HostelPro.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Hostel>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Hostel>()
                 .Property(e => e.Address)
                 .IsUnicode(false);
 
@@ -71,17 +80,8 @@ namespace HostelPro.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Hostel>()
-                .HasMany(e => e.Rooms)
+                .HasMany(e => e.HostelToRoms)
                 .WithRequired(e => e.Hostel)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<HostelName>()
-                .Property(e => e.Name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HostelName>()
-                .HasMany(e => e.HostelNameToCities)
-                .WithRequired(e => e.HostelName)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<HostelRole>()
@@ -89,11 +89,7 @@ namespace HostelPro.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Room>()
-                .Property(e => e.Price)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Room>()
-                .HasMany(e => e.Bookings)
+                .HasMany(e => e.HostelToRoms)
                 .WithRequired(e => e.Room)
                 .WillCascadeOnDelete(false);
         }

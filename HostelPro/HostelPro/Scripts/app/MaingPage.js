@@ -2,13 +2,13 @@
     var window = $("#window"),
         undo = $("#login")
                 .bind("click", function () {
-                    window.data("kendoWindow").open();
+                   // window.data("kendoWindow").open();
                     undo.hide();
                 });
 
     var onClose = function () {
         undo.show();
-    
+        
 
     }
 
@@ -30,11 +30,8 @@
             close: onClose
         });
     }
-    function hide() {
-        $('.k-widget.k-window').hide();
-        $('#login').css('display','block')
-    }
-    $('#register').click(hide);
+
+    //$('#register').click(onClose);
 
 
 });

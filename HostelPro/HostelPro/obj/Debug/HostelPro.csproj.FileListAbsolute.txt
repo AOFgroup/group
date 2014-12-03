@@ -5,6 +5,8 @@ C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Antlr3.Runtime
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\EntityFramework.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\EntityFramework.SqlServer.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Kendo.Mvc.dll
+C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Newtonsoft.Json.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\System.Net.Http.Formatting.dll
@@ -21,6 +23,8 @@ C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\WebGrease.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\EntityFramework.xml
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\EntityFramework.SqlServer.xml
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Kendo.Mvc.xml
+C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\System.Web.Helpers.xml
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\System.Web.Mvc.xml
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\System.Web.Optimization.xml
@@ -52,7 +56,3 @@ C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\uk-UA\Kendo.Mv
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\zh-CN\Kendo.Mvc.resources.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\obj\Debug\HostelPro.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\obj\Debug\HostelPro.pdb
-C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\Microsoft.AspNet.Identity.EntityFramework.xml

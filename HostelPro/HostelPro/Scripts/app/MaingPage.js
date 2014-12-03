@@ -86,6 +86,47 @@
 
        
     }
+    function NewCity() {
+        $('#window').css("display", "block");
+        var window = $("#window"),
+        undo = $("#ciLink")
+                .bind("click", function () {
+                    window.data("kendoWindow").open();
+                    undo.hide();
+                });
+
+        var onClose = function () {
+            undo.show();
+
+        }
+
+        if (!window.data("kendoWindow")) {
+            window.kendoWindow({
+                width: "15%",
+                title: "LogIn",
+                actions: [
+                    "Pin",
+                    "Minimize",
+                    "Maximize",
+                    "Close"
+                ],
+                position: {
+
+                    top: 58,
+                    left: 735
+                },
+                close: onClose
+            });
+        }
+
+
+
+    }
+
+
+    $("#ciLink").click(function () {
+        NewCity()
+    })
 
 
     $('#login').click(login);

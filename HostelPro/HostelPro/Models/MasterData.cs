@@ -5,10 +5,10 @@ namespace HostelPro.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class MasteData : DbContext
+    public partial class MasterData : DbContext
     {
-        public MasteData()
-            : base("name=MasteData")
+        public MasterData()
+            : base("name=MasterData")
         {
         }
 
@@ -81,6 +81,11 @@ namespace HostelPro.Models
 
             modelBuilder.Entity<Hostel>()
                 .HasMany(e => e.HostelToRoms)
+                .WithRequired(e => e.Hostel)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Hostel>()
+                .HasMany(e => e.Rooms)
                 .WithRequired(e => e.Hostel)
                 .WillCascadeOnDelete(false);
 

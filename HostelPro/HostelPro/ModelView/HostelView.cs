@@ -15,7 +15,7 @@ namespace HostelPro.ModelView
         public List<Room> room { get; set; }
         public List<BED> bed { get; set; }
 
-
+        public List<HostelToRom> hostelTorom { get; set; }
 
 
         public HostelView()
@@ -26,7 +26,7 @@ namespace HostelPro.ModelView
             city = new List<City>();
             room = new List<Room>();
             bed = new List<BED>();
-
+            hostelTorom=new List<HostelToRom>();
         }
 
 

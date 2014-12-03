@@ -7,30 +7,21 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HostelPro.Models;
-using HostelPro.ModelView;
+
 namespace HostelPro.Controllers
 {
-    public class AdminController : Controller
+    public class HostelsController : Controller
     {
         private MasterData db = new MasterData();
 
-        // GET: Admin
+        // GET: Hostels
         public ActionResult Index()
         {
-            //var hostels = db.Hostels.Include(h => h.City);
-        //    return View(hostels.ToList());
-            HostelView admin = new HostelView();
-            admin.city.AddRange(db.Cities);
-            admin.booking.AddRange(db.Bookings);
-            admin.customer.AddRange(db.Customers);
-            admin.hostel.AddRange(db.Hostels);
-            admin.room.AddRange(db.Rooms);
-            admin.hostelTorom.AddRange(db.HostelToRoms);
-            return View("admin",admin);
-          
+            var hostels = db.Hostels.Include(h => h.City);
+            return View(hostels.ToList());
         }
 
-        // GET: Admin/Details/5
+        // GET: Hostels/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -45,14 +36,14 @@ namespace HostelPro.Controllers
             return View(hostel);
         }
 
-        // GET: Admin/Create
+        // GET: Hostels/Create
         public ActionResult Create()
         {
             ViewBag.ZIP = new SelectList(db.Cities, "ZIP", "CITY1");
             return View();
         }
 
-        // POST: Admin/Create
+        // POST: Hostels/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -70,7 +61,7 @@ namespace HostelPro.Controllers
             return View(hostel);
         }
 
-        // GET: Admin/Edit/5
+        // GET: Hostels/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -86,7 +77,7 @@ namespace HostelPro.Controllers
             return View(hostel);
         }
 
-        // POST: Admin/Edit/5
+        // POST: Hostels/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -103,7 +94,7 @@ namespace HostelPro.Controllers
             return View(hostel);
         }
 
-        // GET: Admin/Delete/5
+        // GET: Hostels/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -118,7 +109,7 @@ namespace HostelPro.Controllers
             return View(hostel);
         }
 
-        // POST: Admin/Delete/5
+        // POST: Hostels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -137,5 +128,27 @@ namespace HostelPro.Controllers
             }
             base.Dispose(disposing);
         }
-    }
+                [HttpPost]
+        public JsonResult City(City city)
+        {
+            if (this.Request.IsAjaxRequest())
+            {
+             if (ModelState.IsValid)
+             {
+                 db.Cities.Add(city);
+                 db.SaveChanges();
+                 MasterData newDb=new MasterData();
+                 return Json(newDb.Cities,JsonRequestBehavior.AllowGet);
+             }
+              
+            }
+                return Json(city, JsonRequestBehavior.AllowGet);
+        }
+        
+          
+        }
+
+
+
+    
 }

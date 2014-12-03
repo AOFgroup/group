@@ -80,7 +80,7 @@ textarea {
 {
  background-color:lightgray;
  color:white;
- height:18em;;
+ height:18em;
  width:72%;
  float:left;
  text-decoration:none;
@@ -111,4 +111,90 @@ textarea {
 
     display:none;
 
+}
+/*admin page*/
+.navigation-menu {
+  
+    margin-left:1em;
+    float: left;
+    width: 20%;
+    height:40em;
+    background-color:black;
+    opacity:0.7;
+}
+.navigation-menu ul li,a 
+{
+    list-style:none;
+    color:white;
+    text-decoration:none;
+    font-family:sans-serif;
+    font-size:large;
+    margin-top:5%;
+
+}
+a:hover{
+
+    cursor:pointer;
+    color:lightblue;
+    text-decoration:none;
+    color:wheat;
+}
+.content
+{
+  
+    margin-left:2%;
+    float:left;
+    width:60%;
+    border:inherit;
+    height:40em;
+
+}
+.content div
+{
+
+    margin-top:5%;
+
+}
+.tab {
+
+    display:none;
+}
+#lable
+{
+    margin-left:50%;
+    font-family:sans-serif;
+}
+.div-left{
+
+    float:left;
+    margin-left:0%;
+    margin-top:2%;
+    
+}
+.ImCity{
+   
+   float:left;
+   clear:both;
+}
+.div-left a
+{
+color:black;
+
+
+}
+
+
+
+#window{
+margin-top:45%;
+
+}
+#city-di
+{
+
+   margin-left:2%;
+}
+/*Icons*/
+body {
+    
 }

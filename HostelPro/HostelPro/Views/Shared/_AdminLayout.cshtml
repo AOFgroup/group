@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!--This bundle was moved by the Telerik VS Extensions for compatibility reasons-->
+    @Scripts.Render("~/bundles/jquery")
+    <link href="@Url.Content("~/Content/kendo/2014.2.1008/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.2.1008/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.2.1008/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.2.1008/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.2.1008/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/kendo/2014.2.1008/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2014.2.1008/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2014.2.1008/kendo.aspnetmvc.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+   
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

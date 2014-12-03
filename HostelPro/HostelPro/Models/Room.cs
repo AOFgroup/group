@@ -19,7 +19,11 @@ namespace HostelPro.Models
 
         public int BedNumber { get; set; }
 
+        public int HostelId { get; set; }
+
         public virtual ICollection<BED> BEDs { get; set; }
+
+        public virtual Hostel Hostel { get; set; }
 
         public virtual ICollection<HostelToRom> HostelToRoms { get; set; }
     }

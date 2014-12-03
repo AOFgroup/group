@@ -1,0 +1,129 @@
+﻿@model HostelPro.Models.Hostel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div>
+    <div class="ImCity">
+        <img src="~/image/city.png" />
+
+    </div>
+   
+<div class="div-left">
+
+    <h3>New City</h3>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @{
+
+
+            }
+            <div class="form-group">
+                @Html.Label("City", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ZIP", null, htmlAttributes: new { @class = "form-control", id = "CityList" })
+                    <br />
+                    <p><a class="btn-link" id="ciLink">Add new city</a></p>
+
+
+                    @Html.ValidationMessageFor(model => model.ZIP, "", new { @class = "text-danger" })
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Information, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Information, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Information, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    <div>
+        @Html.ActionLink("Back to List", "Index","Admin",null, new {@class="btn" })
+    </div>
+</div>
+<div class="div-left" id="city-di">
+    @{
+        AjaxOptions option = new AjaxOptions()
+        {
+            OnSuccess = "callback",
+            Url = Url.Action("City"),
+            HttpMethod = "Post"
+
+
+        };
+
+
+    }
+    <div id="window" class="tab">
+        @using (Ajax.BeginForm(option))
+        {
+            @Html.EditorFor(r => r.City.CITY1, new { @class = "form-control" }) @:&nbsp; @Html.EditorFor(r => r.City.ZIP, new { @class = "form-control" })
+            @:&nbsp;
+            <br />
+            <br />
+            <input id="ciSave" type="submit" class=" btn btn-default" value="Save" />
+
+        }
+     
+    </div>
+ 
+</div>
+  
+</div>
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+@section scripts{
+    
+<script src="~/Scripts/app/City.js"></script>
+    }

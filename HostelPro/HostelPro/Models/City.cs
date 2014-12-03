@@ -15,6 +15,7 @@ namespace HostelPro.Models
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ZIP { get; set; }
 
         [Column("CITY")]

@@ -22,3 +22,87 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*oleksandr css*/
+.right-li
+{
+   float:left;
+   margin-left:43em;
+}
+
+#LandPage
+{
+ margin-top:10%;
+ width:10em;
+ height:10em;
+
+}
+#button-view
+{
+
+    height:80em;
+    
+
+}
+#mobile-button1,#mobile-button2
+{
+ background-color:lightgray;
+ color:white;
+ height:10em;
+ width:35%;
+ float:left;
+ text-decoration:none;
+ visibility:visible;
+ float:left;
+ margin:1%;
+ text-align: center; 
+
+}
+#book
+{
+ background-color:lightgray;
+ color:white;
+ height:5em;
+ width:20%;
+ float:left;
+ margin-left:53%;
+ margin-top:3%;
+ margin-bottom:3%;
+ text-decoration:none;
+ visibility:visible;
+ float:left;
+ 
+ 
+ text-align: center; 
+
+}
+#mobile-button3,#mobile-button0
+{
+ background-color:lightgray;
+ color:white;
+ height:18em;;
+ width:72%;
+ float:left;
+ text-decoration:none;
+ visibility:visible;
+ float:left;
+ margin:1%;
+ text-align: center;
+
+ clear:both;
+
+}
+#menu{
+  height:5em;
+  background-color:transparent;
+  border-bottom:none;
+
+
+}
+.head-cus
+{
+
+  margin-left:10em;
+
+}
+

@@ -1,4 +1,81 @@
-﻿@{
+﻿@model HostelPro.Models.Customer
+
+@{
     ViewBag.Title = "Home Page";
 }
+<div class="buttons">
+    <div id="window">
+        @Html.Kendo().TextBoxFor(c => c.Name)
+        <br /><br />
+        @Html.Kendo().TextBoxFor(c => c.Hash)
+        <br />
+        <br />
+        <input type="button" class="btn btn-default" value="Rgister" id="register" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" class="btn btn-default" value="Login" />
+        <br />
+        <br />
+        </div>
+    <div id="btn1">
+        @(Html.Kendo().MobileView()
+    .Name("button-view")
+    .Title("Inbox")
+    .Content(
+    @<text>
 
+        <div>
+            @(Html.Kendo().MobileButton()
+                  .Name("mobile-button0")
+            .Text("Slider")
+
+            )
+          
+            @(Html.Kendo().MobileButton()
+                  .Name("book")
+            .Text("Book Now")
+
+            )
+
+        </div>
+        <div>
+
+            @(Html.Kendo().MobileButton()
+                .Name("mobile-button1")
+                .Text("Booking")
+
+            )
+            @(Html.Kendo().MobileButton()
+                        .Name("mobile-button2")
+                        .Text("CheapOffers")
+
+            )
+        </div>
+        <div>
+            @(Html.Kendo().MobileButton()
+                        .Name("mobile-button3")
+                        .Text("PriceList")
+
+            )
+        </div>
+       
+      
+       
+
+    </text>)
+
+        )
+    </div>
+    <div id ="btn1">
+
+    </div>
+    
+
+
+</div>
+<script src="~/Scripts/app/MaingPage.js"></script>
+
+
+
+
+@*@(Html.Kendo().PanelBar().Name("Room").Items(item => item.Add().Text("Rooms")))
+@(Html.Kendo().PanelBar().Name("LandPage").Items(item => item.Add().Text("Rooms")))*@

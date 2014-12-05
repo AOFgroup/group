@@ -84,11 +84,6 @@ namespace HostelPro.Models
                 .WithRequired(e => e.Hostel)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Hostel>()
-                .HasMany(e => e.Rooms)
-                .WithRequired(e => e.Hostel)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<HostelRole>()
                 .Property(e => e.Name)
                 .IsUnicode(false);

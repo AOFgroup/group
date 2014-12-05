@@ -13,7 +13,7 @@
 <div class="div-left">
 
     <h3>New City</h3>
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Create","Hostels",FormMethod.Post))
     {
         @Html.AntiForgeryToken()
 
@@ -22,18 +22,18 @@
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                @*@Html.LabelFor(model => model.Hostel.Name, htmlAttributes: new { @class = "control-label col-md-2" })*@
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Name,null, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.Hostel.Name, "", new { @class = "text-danger" })*@
                 </div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.Hostel.Address, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Hostel.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Hostel.Address, "", new { @class = "text-danger" })
                 </div>
             </div>
             @{
@@ -48,36 +48,52 @@
                     <p><a class="btn-link" id="ciLink">Add new city</a></p>
 
 
-                    @Html.ValidationMessageFor(model => model.ZIP, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Hostel.ZIP, "", new { @class = "text-danger" })
 
                 </div>
 
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Hostel.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Hostel.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Hostel.Phone, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Hostel.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Hostel.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Hostel.Email, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
-                @Html.LabelFor(model => model.Information, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Room.BedNumber, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Information, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Information, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Room.BedNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Room.BedNumber, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Hostel.Information, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Hostel.Information, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Hostel.Information, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Bed.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Bed.Price, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Bed.Price, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+                
+            <hr />
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Create" class="btn btn-default" />
@@ -102,10 +118,10 @@
 
 
     }
-    <div id="window" class="tab">
+    @*<div id="window" class="tab">
         @using (Ajax.BeginForm(option))
         {
-            @Html.EditorFor(r => r.City.CITY1, new { @class = "form-control" }) @:&nbsp; @Html.EditorFor(r => r.City.ZIP, new { @class = "form-control" })
+            @Html.EditorFor(r =>r.City.CITY1, new { @class = "form-control" }) @:&nbsp; @Html.EditorFor(r => r.City.ZIP, new { @class = "form-control" })
             @:&nbsp;
             <br />
             <br />
@@ -113,17 +129,41 @@
 
         }
      
-    </div>
+    </div>*@
  
 </div>
   
 </div>
+@*<script>
+    function callback(data) {
+        $(".tab").hide()
+        //$("tbody[data-model='model']").replaceWith(data)
+        $('#CityList option').remove();
+        var select = $('#CityList');
+        $.each(data, function (key, value) {
 
+            $(select).append('<option value=' + data.Zip + '>' + value.CITY1 + '</option>')
+
+        })
+
+    }
+    $(document).ready(function () {
+
+        $("#ciLink").click(function () {
+            $("#window").show();
+        })
+
+
+       
+
+
+    });
+
+</script>
 
 <script src="~/Scripts/jquery-1.10.2.js"></script>
-<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>*@
+@*<script src="~/Scripts/app/City.js"></script>*@
 @section scripts{
     
-<script src="~/Scripts/app/City.js"></script>
     }

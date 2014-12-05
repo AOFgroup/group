@@ -13,7 +13,7 @@ namespace HostelPro.Models
         {
             HostelToRoms = new HashSet<HostelToRom>();
             Images = new HashSet<Image>();
-            Rooms = new HashSet<Room>();
+           
         }
 
         public int ID { get; set; }
@@ -43,6 +43,6 @@ namespace HostelPro.Models
 
         public virtual ICollection<Image> Images { get; set; }
 
-        public virtual ICollection<Room> Rooms { get; set; }
+        
     }
 }

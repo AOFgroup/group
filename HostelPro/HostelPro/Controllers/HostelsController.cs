@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HostelPro.Models;
+using HostelPro.ModelView;
 
 namespace HostelPro.Controllers
 {
@@ -39,25 +40,28 @@ namespace HostelPro.Controllers
         // GET: Hostels/Create
         public ActionResult Create()
         {
+            HotelRoomBed hostel = new HotelRoomBed();
+         
             ViewBag.ZIP = new SelectList(db.Cities, "ZIP", "CITY1");
-            return View();
+            return View(hostel);
         }
 
         // POST: Hostels/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Address,ZIP,Phone,Email,Information")] Hostel hostel)
+        //[ValidateAntiForgeryToken]
+        public ActionResult Create( )
         {
             if (ModelState.IsValid)
             {
-                db.Hostels.Add(hostel);
+                //db.Hostels.Add(hostel.Hostel);
+                //db.BEDs.Add(hostel.Bed);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ZIP = new SelectList(db.Cities, "ZIP", "CITY1", hostel.ZIP);
+            //ViewBag.ZIP = new SelectList(db.Cities, "ZIP", "CITY1", hostel.Hostel.ZIP);
             return View(hostel);
         }
 
@@ -129,20 +133,21 @@ namespace HostelPro.Controllers
             base.Dispose(disposing);
         }
                 [HttpPost]
-        public JsonResult City(City city)
+        public JsonResult City(HotelRoomBed  CityView)
         {
+                   
             if (this.Request.IsAjaxRequest())
             {
              if (ModelState.IsValid)
              {
-                 db.Cities.Add(city);
+                 db.Cities.Add(CityView.City);
                  db.SaveChanges();
                  MasterData newDb=new MasterData();
                  return Json(newDb.Cities,JsonRequestBehavior.AllowGet);
              }
               
             }
-                return Json(city, JsonRequestBehavior.AllowGet);
+                return Json(db.Cities, JsonRequestBehavior.AllowGet);
         }
         
           

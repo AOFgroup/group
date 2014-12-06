@@ -36,21 +36,24 @@
     .Name("button-view")
     .Title("Inbox")
     .Content(
+   
     @<text>
-
+        
         <div>
             @(Html.Kendo().MobileButton()
                   .Name("mobile-button0")
             .Text("Slider")
 
             )
-          
-            @(Html.Kendo().MobileButton()
+          @(Html.Kendo().MobileButton().Name("PanelBar")
+          .Text("Last minute offer 75% off")
+
+           );
+            @*@(Html.Kendo().MobileButton()
                   .Name("book")
             .Text("Book Now")
 
-            )
-
+            )*@
         </div>
         <div>
 
@@ -65,17 +68,6 @@
 
             )
         </div>
-        <div>
-            @*@(Html.Kendo().MobileButton()
-                        .Name("mobile-button3")
-                        .Text("PriceList")
-
-            )*@
-        </div>
-       
-      
-       
-
     </text>)
 
         )
@@ -89,17 +81,12 @@
 </div>
 <script src="~/Scripts/app/MaingPage.js"></script>
 
-<divz>
-    @using (Html.BeginForm())
-    { 
-     @*@Html.EditorFor(m=>m.booking.First().BookingBeds)*@
-    @Html.EditorFor(m =>m.bok.TotalSum)
-
-
-
-    }
-</divz>
-
-
 @*@(Html.Kendo().PanelBar().Name("Room").Items(item => item.Add().Text("Rooms")))
 @(Html.Kendo().PanelBar().Name("LandPage").Items(item => item.Add().Text("Rooms")))*@
+
+
+@*@(Html.Kendo().PanelBar().Name("PanelOffer").Items(i =>
+{
+    i.Add().Text("Last minute offer");
+
+}));*@

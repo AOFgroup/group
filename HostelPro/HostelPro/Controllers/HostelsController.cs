@@ -95,6 +95,7 @@ namespace HostelPro.Controllers
                             room.BEDs.Add(b);
                             db.BEDs.Add(b);
                         }
+                        db.Hostels.Add(HotelRoomBed.Hostel);
                         db.Rooms.Add(room);
                         h_r.Room = room;
                         h_r.Hostel = HotelRoomBed.Hostel;

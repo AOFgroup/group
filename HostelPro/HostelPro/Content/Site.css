@@ -1,5 +1,9 @@
-﻿body {
-    padding-top: 50px;
+﻿/*For ipads or big screens*/
+@media  (min-device-width: 768px) 
+{
+
+    body {
+    padding-top: 1%;
     padding-bottom: 20px;
 }
 
@@ -49,15 +53,23 @@ textarea {
  background-color:lightgray;
  color:white;
  height:10em;
- width:35%;
+ width:45%;
  float:left;
  text-decoration:none;
  visibility:visible;
  float:left;
- margin:1%;
  text-align: center; 
 
+margin-top:0%;
 }
+#mobile-button1
+{
+margin-right:10%;
+
+
+}
+
+
 #book
 {
  background-color:lightgray;
@@ -65,36 +77,41 @@ textarea {
  height:5em;
  width:20%;
  float:left;
- margin-left:53%;
- margin-top:3%;
+ margin-left:80%;
+ margin-top:1%;
  margin-bottom:3%;
  text-decoration:none;
  visibility:visible;
  float:left;
- 
- 
  text-align: center; 
 
 }
+#PanaleBar
+{
+ height:5em;
+ width:600%;
+ float:left;
+ background-color:black;
+}
+
+
+
 #mobile-button3,#mobile-button0
 {
  background-color:lightgray;
  color:white;
  height:18em;
- width:72%;
+ width:100%;
  float:left;
  text-decoration:none;
  visibility:visible;
  float:left;
- margin:1%;
  text-align: center;
-
  clear:both;
-
 }
 #menu{
-  height:5em;
-  background-color:transparent;
+  /*height:5em;*/
+  /*background-color:transparent;*/
   border-bottom:none;
 
 
@@ -144,7 +161,7 @@ a:hover{
   
     margin-left:2%;
     float:left;
-    width:60%;
+    width:40%;
     border:inherit;
     height:40em;
 
@@ -198,4 +215,18 @@ margin-top:45%;
 .glyphicon 
 {
     margin-left:2%;
+}
+.buttons
+{
+    margin-left:1%;
+
+}
+
+
+	}
+
+@media (max-device-width: 1200px) 
+{
+
+
 }

@@ -69,6 +69,7 @@ CREATE TABLE BookingBed
 (
  ID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
  BedId int  foreign key references BED (ID) NOT NULL,
+ BookingId int  foreign key references Booking (ID) NOT NULL,
  DateStart datetime,
  DateEnd datetime,
 )

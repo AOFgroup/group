@@ -14,6 +14,8 @@ namespace HostelPro.ModelView
         public List<City> city { get; set; }
         public List<Room> room { get; set; }
         public List<BED> bed { get; set; }
+        public Customer CUS { get; set; }
+        public Booking bok { get; set; }
 
         public List<HostelToRom> hostelTorom { get; set; }
 
@@ -26,6 +28,8 @@ namespace HostelPro.ModelView
             city = new List<City>();
             room = new List<Room>();
             bed = new List<BED>();
+            CUS = new Customer();
+            bok = new Booking();
             hostelTorom=new List<HostelToRom>();
         }
 

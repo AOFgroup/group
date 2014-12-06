@@ -1,13 +1,13 @@
-﻿@model HostelPro.Models.Customer
+﻿@model HostelPro.ModelView.HostelView
 
 @{
     ViewBag.Title = "Home Page";
 }
 <div class="buttons">
     <div id="window">
-        @Html.Kendo().TextBoxFor(c => c.Name)
+        @Html.Kendo().TextBoxFor(c => c.CUS.Name)
         <br /><br />
-        @Html.Kendo().TextBoxFor(c => c.Hash)
+        @Html.Kendo().TextBoxFor(c => c.CUS.Hash)
         <br />
         <br />
         <input type="button" class="btn btn-default" value="Register" id="register" />
@@ -18,13 +18,13 @@
         </div>
     <div id="btn1">
      <div id="window2">
-         @Html.Kendo().TextBoxFor(c=>c.Name)
+         @Html.Kendo().TextBoxFor(c => c.CUS.Name)
          <br /><br />
-         @Html.Kendo().TextBoxFor(c => c.Hash)
+         @Html.Kendo().TextBoxFor(c => c.CUS.Hash)
          <br /><br />
-         @Html.Kendo().TextBoxFor(c => c.Email)
+         @Html.Kendo().TextBoxFor(c => c.CUS.Email)
          <br /><br />
-         @Html.Kendo().NumericTextBoxFor(c=>c.Phone)
+         @Html.Kendo().NumericTextBoxFor(c => c.CUS.Phone)
          <br /><br />
          @*<input type="button" class="btn btn-default" value="Login" id="loginBtn" />
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*@
@@ -89,7 +89,16 @@
 </div>
 <script src="~/Scripts/app/MaingPage.js"></script>
 
+<divz>
+    @using (Html.BeginForm())
+    { 
+     @*@Html.EditorFor(m=>m.booking.First().BookingBeds)*@
+    @Html.EditorFor(m =>m.bok.TotalSum)
 
+
+
+    }
+</divz>
 
 
 @*@(Html.Kendo().PanelBar().Name("Room").Items(item => item.Add().Text("Rooms")))

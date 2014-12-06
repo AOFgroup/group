@@ -17,7 +17,7 @@ namespace HostelPro.Models
 
         public int ID { get; set; }
 
-        public int BedNumber { get; set; }
+        public int RoomNumber { get; set; }
         public virtual ICollection<BED> BEDs { get; set; }
         public virtual ICollection<HostelToRom> HostelToRoms { get; set; }
     }

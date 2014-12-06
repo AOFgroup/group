@@ -140,18 +140,18 @@ namespace HostelPro.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult Read([DataSourceRequest] DataSourceRequest request)
-        {
-            //using (var bedPrice = new MasterData())
-            //{
-            //    IQueryable<BED> bd = bedPrice.BEDs;
-            //    DataSourceResult result =bd.ToDataSourceResult(request);
-            //    return Json(result);
-            //}
+        //public ActionResult Read([DataSourceRequest] DataSourceRequest request)
+        //{
+        //    //using (var bedPrice = new MasterData())
+        //    //{
+        //    //    IQueryable<BED> bd = bedPrice.BEDs;
+        //    //    DataSourceResult result =bd.ToDataSourceResult(request);
+        //    //    return Json(result);
+        //    //}
 
            
             
-        }
+        //}
 
 
     }

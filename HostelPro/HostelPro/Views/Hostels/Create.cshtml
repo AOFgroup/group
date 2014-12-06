@@ -135,7 +135,18 @@
   
 </div>
 <script>
-   
+    function callback(data) {
+        $(".tab").hide()
+        //$("tbody[data-model='model']").replaceWith(data)
+        $('#CityList option').remove();
+        var select = $('#CityList');
+        $.each(data, function (key, value) {
+
+            $(select).append('<option value=' + data.Zip + '>' + value.CITY1 + '</option>')
+
+        })
+
+    }
 </script>
 @*<script src="~/Scripts/jquery-1.10.2.js"></script>*@
   

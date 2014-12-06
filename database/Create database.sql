@@ -41,8 +41,7 @@ CREATE table [Image]
 CREATE TABLE Room
 (
 ID INT IDENTITY  NOT NULL PRIMARY KEY,
-BedNumber int NOT NULL,
-HostelId INT FOREIGN KEY REFERENCES Hostel (ID) NOT NULL,
+RoomNumber int NOT NULL
 )
 CREATE TABLE HostelToRom
 (
@@ -62,15 +61,14 @@ CREATE TABLE Booking
 ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 CustomerId INT FOREIGN KEY REFERENCES Customer (ID) NOT NULL,
 TotalSum decimal not null,
-BookingDate datetime
+BookingDate datetime,
+Amount int 
 )
 
 CREATE TABLE BookingBed
 (
  ID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
- BedId int NOT NULL,
- BookingId int NOT NULL FOREIGN KEY REFERENCES Booking(ID),
- Amount int,
+ BedId int foreign key references NOT NULL,
  DateStart datetime,
  DateEnd datetime,
 )

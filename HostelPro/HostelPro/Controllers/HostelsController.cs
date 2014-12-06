@@ -51,18 +51,72 @@ namespace HostelPro.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Create( )
+        public ActionResult Create(HotelRoomBed HotelRoomBed,FormCollection collection)
         {
             if (ModelState.IsValid)
             {
-                //db.Hostels.Add(hostel.Hostel);
-                //db.BEDs.Add(hostel.Bed);
+                db.Hostels.Add(HotelRoomBed.Hostel);
+                Room room;
+                BED b;
+                HostelToRom h_r;
+                var bedNumber = collection["bedInput"];
+                var pricePrBed = collection["Price"];
+                int[] rooms=null;
+                int[] price = null;
+                try
+                {
+                    rooms = bedNumber.Split(',').Select(c => Convert.ToInt32(c)).ToArray();
+                    price = pricePrBed.Split(',').Select(c => Convert.ToInt32(c)).ToArray();
+                }
+                catch
+                {
+
+                }
+                if (rooms != null)
+                {
+                    int index=0;
+                    foreach (int roomNumber in rooms)
+                    {
+                        ++index;
+                        h_r = new HostelToRom();
+                        room = new Room();
+                        int bedPrice=0;
+                        if (price != null)
+                        {
+                            bedPrice = price[index-1];
+
+                        }
+                        for (int i = 0; i < roomNumber; i++)
+                        {
+
+                            b = new BED();
+                            b.Room = room;
+                            b.Price = bedPrice;
+                            room.BEDs.Add(b);
+                            db.BEDs.Add(b);
+                        }
+                        db.Rooms.Add(room);
+                        h_r.Room = room;
+                        h_r.Hostel = HotelRoomBed.Hostel;
+                        db.HostelToRoms.Add(h_r);
+                    }
+
+
+                }
+
+                else
+                {
+                    db.Hostels.Add(HotelRoomBed.Hostel);
+
+
+                }
+                
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Admin");
             }
 
-            //ViewBag.ZIP = new SelectList(db.Cities, "ZIP", "CITY1", hostel.Hostel.ZIP);
-            return View(hostel);
+            ViewBag.ZIP = new SelectList(db.Cities, "ZIP", "CITY1", HotelRoomBed.Hostel.ZIP);
+            return View(HotelRoomBed);
         }
 
         // GET: Hostels/Edit/5

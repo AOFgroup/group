@@ -388,7 +388,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="image\city.png" />
     <Content Include="Scripts\app\admin.js" />
-    <Content Include="Scripts\app\City.js" />
+    <Content Include="Scripts\app\Hostel.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\kendo\2014.2.1008\images\kendoui.ttf" />

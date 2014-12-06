@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using HostelPro.Models;
 using HostelPro.ModelView;
+using Kendo.Mvc.UI;
+using System.Web.Script.Serialization;
 namespace HostelPro.Controllers
 {
     public class AdminController : Controller
@@ -26,6 +28,7 @@ namespace HostelPro.Controllers
             admin.hostel.AddRange(db.Hostels);
             admin.room.AddRange(db.Rooms);
             admin.hostelTorom.AddRange(db.HostelToRoms);
+            admin.bed.AddRange(db.BEDs);
             return View("admin",admin);
           
         }
@@ -137,5 +140,19 @@ namespace HostelPro.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Read([DataSourceRequest] DataSourceRequest request)
+        {
+            //using (var bedPrice = new MasterData())
+            //{
+            //    IQueryable<BED> bd = bedPrice.BEDs;
+            //    DataSourceResult result =bd.ToDataSourceResult(request);
+            //    return Json(result);
+            //}
+
+           
+            
+        }
+
+
     }
 }

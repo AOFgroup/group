@@ -45,12 +45,19 @@
     <div class="tab" id="Room">
         <h4>Rooms</h4>
         @(Html.Kendo().Grid(Model.hostelTorom).Name("grd2-r").Columns(col => {
-
-        col.Bound(c => c.RoomID).Title("Room");
-        col.Bound(c => c.Room.BedNumber);
         col.Bound(c => c.Hostel.Name).Title("Hostel Name");
+        col.Bound(c => c.RoomID).Title("Room Nr.");
+       
 
     }).Pageable().Sortable().Filterable())
+        <hr />
+        <h4>Beds</h4>
+        @(Html.Kendo().Grid(Model.bed).Name("grd2-b").Columns(col =>
+        {
+            col.Bound(c => c.Room.ID).Title("Room Id");
+            col.Bound(c => c.ID).Title("Bed Id");
+            col.Bound(c => c.Price).Title("Price");
+        }).Pageable().Sortable().Filterable())
     </div>
     <div class="tab" id="Customer">
         <h4>Customers</h4>

@@ -2,7 +2,7 @@
 
     function CheckBeds() {
 
-        alert("Hello")
+      window.location="Hostels/index"
 
     }
     return {
@@ -138,12 +138,10 @@ $(document).ready(function () {
 
     }
 
-
+    //$("#mobile-button1").click(CheckElement.CheckBeds)
     $("#ciLink").click(function () {
         NewCity()
     })
-
-
     $('#login').click(login);
     $('#register').click(register);
     $('#btn-login').click(register);

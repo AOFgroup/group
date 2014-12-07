@@ -22,6 +22,27 @@ namespace HostelPro.Controllers
             return View(hostels.ToList());
         }
 
+        public ActionResult FindBeds()
+        {
+            BedFilter BD = new BedFilter();
+            BD.hostel = db.Hostels.ToList();
+            BD.bed = db.BEDs.ToList();
+            BD.room = db.Rooms.ToList();
+            BD.city = db.Cities.ToList();
+
+            return View(BD);
+        
+        }
+        public ActionResult Date()
+        {
+
+
+
+            return PartialView("_Date");
+        }
+
+
+
         // GET: Hostels/Details/5
         public ActionResult Details(int? id)
         {

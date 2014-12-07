@@ -1,0 +1,92 @@
+﻿@using HostelPro.Models
+@model HostelPro.ModelView.BedFilter
+@{
+    ViewBag.Title = "FindBeds";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="app-content">
+  <ul class="app-filter">
+   <li>
+        <a class="li-a"><span class="glyphicon glyphicon-flag"></span><br />City</a>
+    </li>
+    <li>
+        <a class="li-a"><span class="glyphicon glyphicon-list-alt"></span><br />Date</a>
+    </li>
+    <li>
+        <a class="li-a"><span class="glyphicon glyphicon-user"></span><br />People</a>
+    </li>
+    <li>
+        <a class="li-a"><span class="glyphicon glyphicon-euro "></span><br />Price</a>
+    </li>
+
+  </ul>
+    <ul class="view-body">
+        @foreach (Hostel hostel in Model.hostel)
+        {
+            var price = hostel.HostelToRoms.Min(s => s.Room.BEDs.Min(r => r.Price));
+            if (price != null)
+            {
+                <li>
+                    <a class="item-con">
+                        <h5>@hostel.Name</h5>
+                        <p>From @price dk</p>
+                    </a>
+                </li>
+
+            }
+
+
+
+        }
+
+
+    </ul>
+
+
+</div>
+<div id="window">
+
+
+</div>
+<script>
+    function login() {
+        $('#window').css("display", "block");
+        var window = $("#pop-up"),
+        undo = $(".li-a")
+                .bind("click", function () {
+                    window.data("kendoWindow").open();
+                    undo.hide();
+                });
+
+        var onClose = function () {
+            undo.show();
+
+        }
+
+        if (!window.data("kendoWindow")) {
+            window.kendoWindow({
+                width: "15%",
+                title: "LogIn",
+                actions: [
+                    "Pin",
+                    "Minimize",
+                    "Maximize",
+                    "Close"
+                ],
+                position: {
+
+                    top: 58,
+                    left: 735
+                },
+                close: onClose
+            });
+        }
+
+
+
+    }
+    $(".li-a").click(login)
+
+</script>
+<script src="~/Scripts/app/findbed.js"></script>

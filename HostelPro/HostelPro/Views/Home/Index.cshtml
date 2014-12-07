@@ -40,9 +40,9 @@
     @<text>
         
         <div>
-            @(Html.Kendo().MobileButton()
-                  .Name("mobile-button0")
-            .Text("Slider"));
+            
+            <img id="mobile-button0" /> />
+           
             
 
           @(Html.Kendo().MobileButton().Name("Offer")
@@ -50,19 +50,14 @@
            );
             @(Html.Kendo().MobileButton()
                   .Name("book")
-            .Text("Book Now")
+            .Text("Book")
             )
             
         </div>
         <div>
-            @*@Html.ActionLink("Book Now", "index", "Hostels", new { @id = "mobile-button1" });*@
-            @(Html.Kendo().MobileButton()
-                .Name("mobile-button1")
-                .Text("Check Beds")
-                        .Events(e => e.Click("CheckBeds"))
-                        .Enable(true)
-                       )
-                
+   
+            @Html.ActionLink("Find Bed", "FindBeds", "Hostels", null, new { @id = "mobile-button1" })
+          
             @(Html.Kendo().MobileButton()
                         .Name("mobile-button2")
                         .Text("CheapOffers")
@@ -81,10 +76,8 @@
 
     </div>
     
+   
 
 
 </div>
-<script>
-   
-</script>
 <script src="~/Scripts/app/MaingPage.js"></script>

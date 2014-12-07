@@ -160,6 +160,7 @@
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\MasterData.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="ModelView\BedFilter.cs" />
     <Compile Include="ModelView\HostelView.cs" />
     <Compile Include="ModelView\HotelRoomBed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -386,8 +387,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="image\babysleep.jpg" />
+    <Content Include="image\back.jpg" />
+    <Content Include="image\catsleep.jpg" />
     <Content Include="image\city.png" />
+    <Content Include="image\datepicker.png" />
+    <Content Include="image\location-icon-hi.png" />
+    <Content Include="image\People.png" />
+    <Content Include="image\sleep.jpg" />
+    <Content Include="image\Star-Background-7.jpg" />
     <Content Include="Scripts\app\admin.js" />
+    <Content Include="Scripts\app\findbed.js" />
     <Content Include="Scripts\app\Hostel.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -703,6 +713,8 @@
     <Content Include="Views\Cities\Details.cshtml" />
     <Content Include="Views\Cities\Edit.cshtml" />
     <Content Include="Views\Cities\Index.cshtml" />
+    <Content Include="Views\Hostels\FindBeds.cshtml" />
+    <Content Include="Views\Hostels\_Date.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -20,6 +20,8 @@ namespace HostelPro.Controllers
             return View(data);
         }
 
+       
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

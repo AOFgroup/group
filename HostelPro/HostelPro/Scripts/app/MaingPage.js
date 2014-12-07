@@ -1,5 +1,29 @@
 ﻿$(document).ready(function () {
    
+   
+    var CheckElement = (function () {
+
+        function CheckBeds() {
+
+            alert("Hello")
+
+        }
+        return {
+
+            CheckBeds: CheckBeds
+        }
+
+
+    })();
+
+
+
+
+    $('mobile-button1').click(function CheckBeds() {
+
+        alert("Hello")
+
+    })
 
     function login() {
         $('#window').css("display", "block");

@@ -59,6 +59,8 @@
             @(Html.Kendo().MobileButton()
                 .Name("mobile-button1")
                 .Text("Check Beds")
+                        .Events(e => e.Click("CheckBeds"))
+                        .Enable(true)
                        )
                 
             @(Html.Kendo().MobileButton()
@@ -82,14 +84,7 @@
 
 
 </div>
+<script>
+   
+</script>
 <script src="~/Scripts/app/MaingPage.js"></script>
-
-@*@(Html.Kendo().PanelBar().Name("Room").Items(item => item.Add().Text("Rooms")))
-@(Html.Kendo().PanelBar().Name("LandPage").Items(item => item.Add().Text("Rooms")))*@
-
-
-@*@(Html.Kendo().PanelBar().Name("PanelOffer").Items(i =>
-{
-    i.Add().Text("Last minute offer");
-
-}));*@

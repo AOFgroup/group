@@ -16,23 +16,20 @@ alter  PROCEDURE createBooking
 @DateEnd date=null,
 @TotalSum decimal=null, 
 @NumberOfbeds int=null
-
 as 
 declare  @Customer int,@AVAILIBLE bit,@BookingId int,@Count int
 set @Count=0
 set @Customer=(select c.ID from Customer as c where c.Email=@Email)
-EXEC CountBeds @DateStart,@DateEnd,@RoomId,@NumberOfbeds,@AVAILIBLE 
+EXEC CountBeds @DateStart,@DateEnd,@RoomId,@NumberOfbeds,@AVAILIBLE OUTPUT
 print @AVAILIBLE 
-
 IF @CustomerId IS NULL
 BEGIN
 INSERT INTO Customer VALUES(@CusName,@Phone,@Email,@Hash,@Salt,2)
 SET @CustomerId=(Select Customer.ID from Customer where Customer.Email=@Email)/*returns id of inserted row on aoutincrement*/
 END
-ELSE
-INSERT INTO Booking (CustomerId,TotalSum) values  (1,200)
+INSERT INTO Booking (CustomerId,TotalSum) values  (@CustomerId,200)
 select @BookingId=SCOPE_IDENTITY()
-IF @AVAILIBLE IS NOT NULL
+IF @AVAILIBLE=1
 PRINT @AVAILIBLE
 WHILE @Count<=@NumberOfbeds
 BEGIN

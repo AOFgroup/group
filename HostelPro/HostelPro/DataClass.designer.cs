@@ -75,6 +75,13 @@ namespace HostelPro
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<allHostelsResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AvailibleBeds")]
+		public ISingleResult<AvailibleBedsResult1> AvailibleBeds1([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DateStart", DbType="Date")] System.Nullable<System.DateTime> dateStart, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DateEnd", DbType="Date")] System.Nullable<System.DateTime> dateEnd)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dateStart, dateEnd);
+			return ((ISingleResult<AvailibleBedsResult1>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class AvailibleBedsResult
@@ -268,6 +275,68 @@ namespace HostelPro
 				if ((this._Information != value))
 				{
 					this._Information = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AvailibleBedsResult1
+	{
+		
+		private System.Nullable<int> _RoomId;
+		
+		private int _BedNumber;
+		
+		private System.Nullable<System.DateTime> _DateEnd;
+		
+		public AvailibleBedsResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomId", DbType="Int")]
+		public System.Nullable<int> RoomId
+		{
+			get
+			{
+				return this._RoomId;
+			}
+			set
+			{
+				if ((this._RoomId != value))
+				{
+					this._RoomId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BedNumber", DbType="Int NOT NULL")]
+		public int BedNumber
+		{
+			get
+			{
+				return this._BedNumber;
+			}
+			set
+			{
+				if ((this._BedNumber != value))
+				{
+					this._BedNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEnd", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateEnd
+		{
+			get
+			{
+				return this._DateEnd;
+			}
+			set
+			{
+				if ((this._DateEnd != value))
+				{
+					this._DateEnd = value;
 				}
 			}
 		}

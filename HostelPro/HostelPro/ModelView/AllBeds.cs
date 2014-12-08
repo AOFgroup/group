@@ -8,7 +8,7 @@ namespace HostelPro.ModelView
     public class AllBeds
     {
         public Int32 RoomId { get; set; }
-        public string  BeNumber { get; set; }
+        public Int32  BeNumber { get; set; }
         public string DateEnd { get; set; }
         
     }

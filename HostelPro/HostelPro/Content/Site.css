@@ -113,23 +113,15 @@ margin-right:10%;
     background-color:black;
     opacity:0.7;
 }
-.navigation-menu ul a 
+.navigation-menu ul li,a 
 {
     list-style:none;
     color:white;
     text-decoration:none;
     font-family:sans-serif;
     font-size:large;
-    margin-top:20%;
-    margin-left:10%;
+    margin-top:5%;
 
-}
-.navigation-menu ul
-{
-    
-    margin-top:20%;
-    margin-left:-10%;
-    clear:both;
 }
 a:hover{
 
@@ -251,7 +243,7 @@ body {
   }
  ul li
  {
-     /*display:inline;*/
+     display:inline;
      
      list-style:none;
 
@@ -441,7 +433,7 @@ margin-top:3%;
     text-align:center;
     padding-top:2%;
     font-size:small;
-   margin:1%;
+   margin:0%;
     margin-top:3%;
  
   }

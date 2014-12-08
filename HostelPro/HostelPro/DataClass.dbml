@@ -20,4 +20,13 @@
       <Column Name="Information" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.AvailibleBeds" Method="AvailibleBeds1">
+    <Parameter Name="DateStart" Parameter="dateStart" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateEnd" Parameter="dateEnd" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="AvailibleBedsResult1">
+      <Column Name="RoomId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BedNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

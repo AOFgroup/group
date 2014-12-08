@@ -51,7 +51,10 @@ namespace HostelPro.Controllers
             DateTime start = Convert.ToDateTime(DateStart);
             DateTime end = Convert.ToDateTime(DateEnd);
             DataClassDataContext dt = new DataClassDataContext();
+            //codeFirst
+            
             var evailibleBeds = db.Database.SqlQuery<AllBeds>("AvailibleBeds @DateStart={0},@DateEnd={1}",start,end).ToList();
+            //database first
             var beds = dt.AvailibleBeds(start,end).ToList();
            
 

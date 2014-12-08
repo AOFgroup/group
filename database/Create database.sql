@@ -42,7 +42,8 @@ CREATE TABLE Room
 (
 ID INT IDENTITY  NOT NULL PRIMARY KEY,
 RoomNumber int NOT NULL,
-HostelId int not null
+HostelId int not null foreign key references Hostel(ID) 
+
 )
 
 CREATE TABLE BED
@@ -57,7 +58,7 @@ CREATE TABLE Booking
 ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 CustomerId INT FOREIGN KEY REFERENCES Customer (ID) NOT NULL,
 TotalSum decimal not null,
-BookingDate datetime,
+BookingDate datetime default(getdate()),
 Amount int 
 )
 

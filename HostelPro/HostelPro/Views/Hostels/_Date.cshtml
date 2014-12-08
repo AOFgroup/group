@@ -1,1 +1,8 @@
-﻿
+﻿@model HostelPro.ModelView.BedFilter
+
+<h4>Select Duration</h4>
+<h5>From:&nbsp;&nbsp; @(Html.Kendo().DatePickerFor(r=>r.bookingBed.DateStart).Name("DateFrom").Value(DateTime.Now.Date).Format("yyyy-MM-dd"))</h5>  
+<h5>To:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@(Html.Kendo().DatePickerFor(r=>r.bookingBed.DateEnd).Name("DateEnd").Value(DateTime.Now.Date).Format("yyyy-MM-dd"))</h5>  
+<br />
+<a class="btn btn-default" id="Fil-Date">Check</a>
+<script src="~/Scripts/app/date.js"></script>

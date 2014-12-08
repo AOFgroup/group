@@ -41,9 +41,14 @@ textarea {
     height:80em;
 
 }
+.navbar-fixed-top{
+
+    background-color:black;
+    opacity:0.5;
+}
 #mobile-button1,#mobile-button2
 {
- background-color:lightgray;
+ background-color:#dfe3ee;
  color:white;
  height:10em;
  width:45%;
@@ -108,15 +113,23 @@ margin-right:10%;
     background-color:black;
     opacity:0.7;
 }
-.navigation-menu ul li,a 
+.navigation-menu ul a 
 {
     list-style:none;
     color:white;
     text-decoration:none;
     font-family:sans-serif;
     font-size:large;
-    margin-top:5%;
+    margin-top:20%;
+    margin-left:10%;
 
+}
+.navigation-menu ul
+{
+    
+    margin-top:20%;
+    margin-left:-10%;
+    clear:both;
 }
 a:hover{
 
@@ -195,6 +208,81 @@ margin-top:45%;
  display:none;
 
 }
+.buttons
+{
+margin-top:10%;
+
+}
+body {
+    background-color:#f7f7f7;
+   
+}
+.item-con {
+        display: inline-block;
+        height: 6em;
+        width: 28%;
+        background-color:	#dfe3ee;
+        border: initial;
+        /*background-image: url('../image/back.jpg');*/
+        text-align: center;
+        font-size: small;
+        margin: 1%;
+        font-size: small;
+       
+    }
+
+ .app-content .app-filter li a{
+  
+    display:inline-block;
+     height:5em;
+     width:10em;
+     color:white;
+     border:initial;
+     background-color:#8b9dc3;
+    text-align:center;
+    padding-top:2%;
+    font-size:small;
+     margin:2%;
+    margin-top:6%;
+
+   
+  
+ 
+  }
+ ul li
+ {
+     /*display:inline;*/
+     
+     list-style:none;
+
+ }
+
+
+ .view-body p
+{
+background-color:red;
+color:white;
+
+}
+.view-body h5
+{
+
+ padding-top:4px;
+ font-family:sans-serif;
+ color:black;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 768px) 
 {
@@ -353,7 +441,8 @@ margin-top:3%;
     text-align:center;
     padding-top:2%;
     font-size:small;
-  
+   margin:1%;
+    margin-top:3%;
  
   }
 

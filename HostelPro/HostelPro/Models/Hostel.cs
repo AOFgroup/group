@@ -11,9 +11,7 @@ namespace HostelPro.Models
     {
         public Hostel()
         {
-            HostelToRoms = new HashSet<HostelToRom>();
             Images = new HashSet<Image>();
-           
         }
 
         public int ID { get; set; }
@@ -39,7 +37,7 @@ namespace HostelPro.Models
 
         public virtual City City { get; set; }
 
-        public virtual ICollection<HostelToRom> HostelToRoms { get; set; }
+        public virtual ICollection<Room> Roms { get; set; }
 
         public virtual ICollection<Image> Images { get; set; }
 

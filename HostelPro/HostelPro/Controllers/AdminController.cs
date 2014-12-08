@@ -27,7 +27,6 @@ namespace HostelPro.Controllers
             admin.customer.AddRange(db.Customers);
             admin.hostel.AddRange(db.Hostels);
             admin.room.AddRange(db.Rooms);
-            admin.hostelTorom.AddRange(db.HostelToRoms);
             admin.bed.AddRange(db.BEDs);
             return View("admin",admin);
           

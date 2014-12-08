@@ -17,8 +17,10 @@ namespace HostelPro.ModelView
         public List<BED> bed { get; set; }
         public List<City> city { get; set; }
         public List<Hostel> hostel { get; set; }
+        public BookingBed bookingBed { get; set; }
       public  BedFilter()
         {
+            bookingBed = new BookingBed();
             room = new List<Room>();
             bed = new List<BED>();
             city = new List<City>();

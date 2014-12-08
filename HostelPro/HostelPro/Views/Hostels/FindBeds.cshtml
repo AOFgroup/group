@@ -24,7 +24,7 @@
     <ul class="view-body">
         @foreach (Hostel hostel in Model.hostel)
         {
-            var price = hostel.HostelToRoms.Min(s => s.Room.BEDs.Min(r => r.Price));
+            var price = hostel.Roms.Min(s => s.BEDs.Min(r => r.Price));
             if (price != null)
             {
                 <li>
@@ -45,48 +45,12 @@
 
 
 </div>
-<div id="window">
+<div id="pop-up">
 
 
 </div>
 <script>
-    function login() {
-        $('#window').css("display", "block");
-        var window = $("#pop-up"),
-        undo = $(".li-a")
-                .bind("click", function () {
-                    window.data("kendoWindow").open();
-                    undo.hide();
-                });
-
-        var onClose = function () {
-            undo.show();
-
-        }
-
-        if (!window.data("kendoWindow")) {
-            window.kendoWindow({
-                width: "15%",
-                title: "LogIn",
-                actions: [
-                    "Pin",
-                    "Minimize",
-                    "Maximize",
-                    "Close"
-                ],
-                position: {
-
-                    top: 58,
-                    left: 735
-                },
-                close: onClose
-            });
-        }
-
-
-
-    }
-    $(".li-a").click(login)
-
+    
 </script>
+
 <script src="~/Scripts/app/findbed.js"></script>

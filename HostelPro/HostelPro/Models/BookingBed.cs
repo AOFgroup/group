@@ -22,5 +22,6 @@ namespace HostelPro.Models
         public DateTime? DateEnd { get; set; }
 
         public virtual Booking Booking { get; set; }
+        public virtual BED Bed { get; set; }
     }
 }

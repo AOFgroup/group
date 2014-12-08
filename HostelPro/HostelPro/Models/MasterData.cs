@@ -19,7 +19,6 @@ namespace HostelPro.Models
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Hostel> Hostels { get; set; }
         public virtual DbSet<HostelRole> HostelRoles { get; set; }
-        public virtual DbSet<HostelToRom> HostelToRoms { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
 
@@ -79,19 +78,13 @@ namespace HostelPro.Models
                 .Property(e => e.Information)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Hostel>()
-                .HasMany(e => e.HostelToRoms)
-                .WithRequired(e => e.Hostel)
-                .WillCascadeOnDelete(false);
+           
 
             modelBuilder.Entity<HostelRole>()
                 .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Room>()
-                .HasMany(e => e.HostelToRoms)
-                .WithRequired(e => e.Room)
-                .WillCascadeOnDelete(false);
+          
         }
     }
 }

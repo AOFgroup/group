@@ -35,13 +35,28 @@ namespace HostelPro.Controllers
         }
         public ActionResult Date()
         {
-
-
-
-            return PartialView("_Date");
+            BedFilter bed = new BedFilter();
+            return PartialView("_Date",bed);
         }
+       
+        public ActionResult City()
+        {
 
 
+
+            return PartialView("_City");
+        }
+        public JsonResult Filter(string DateStart,string DateEnd)
+        {
+            DateTime start = Convert.ToDateTime(DateStart);
+            DateTime end = Convert.ToDateTime(DateEnd);
+            DataClassDataContext dt = new DataClassDataContext();
+            var evailibleBeds = db.Database.SqlQuery<AllBeds>("AvailibleBeds @DateStart={0},@DateEnd={1}",start,end).ToList();
+            var beds = dt.AvailibleBeds(start,end).ToList();
+           
+
+            return Json(DateEnd , JsonRequestBehavior.AllowGet);
+        }
 
         // GET: Hostels/Details/5
         public ActionResult Details(int? id)
@@ -79,7 +94,7 @@ namespace HostelPro.Controllers
                 db.Hostels.Add(HotelRoomBed.Hostel);
                 Room room;
                 BED b;
-                HostelToRom h_r;
+               
                 var bedNumber = collection["bedInput"];
                 var pricePrBed = collection["Price"];
                 int[] rooms=null;
@@ -99,7 +114,7 @@ namespace HostelPro.Controllers
                     foreach (int roomNumber in rooms)
                     {
                         ++index;
-                        h_r = new HostelToRom();
+                
                         room = new Room();
                         int bedPrice=0;
                         if (price != null)
@@ -117,10 +132,9 @@ namespace HostelPro.Controllers
                             db.BEDs.Add(b);
                         }
                         db.Hostels.Add(HotelRoomBed.Hostel);
+                        room.Hostel = HotelRoomBed.Hostel;
                         db.Rooms.Add(room);
-                        h_r.Room = room;
-                        h_r.Hostel = HotelRoomBed.Hostel;
-                        db.HostelToRoms.Add(h_r);
+                      
                     }
 
 

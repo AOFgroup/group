@@ -12,13 +12,13 @@ namespace HostelPro.Models
         public Room()
         {
             BEDs = new HashSet<BED>();
-            HostelToRoms = new HashSet<HostelToRom>();
+           
         }
 
         public int ID { get; set; }
-
+        public int HostelId { get; set; }
         public int RoomNumber { get; set; }
         public virtual ICollection<BED> BEDs { get; set; }
-        public virtual ICollection<HostelToRom> HostelToRoms { get; set; }
+        public virtual Hostel Hostel { get; set; }
     }
 }

@@ -44,9 +44,9 @@
     </div>
     <div class="tab" id="Room">
         <h4>Rooms</h4>
-        @(Html.Kendo().Grid(Model.hostelTorom).Name("grd2-r").Columns(col => {
+        @(Html.Kendo().Grid(Model.room).Name("grd2-r").Columns(col => {
         col.Bound(c => c.Hostel.Name).Title("Hostel Name");
-        col.Bound(c => c.RoomID).Title("Room Nr.");
+        col.Bound(c => c.ID).Title("Room Nr.");
        
 
     }).Pageable().Sortable().Filterable())

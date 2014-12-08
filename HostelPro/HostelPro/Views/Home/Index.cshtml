@@ -41,7 +41,7 @@
         
         <div>
             
-            <img id="mobile-button0" /> />
+            <img id="mobile-button0"/> />
            
             
 
@@ -75,9 +75,47 @@
     <div id ="btn1">
 
     </div>
-    
-   
-
-
 </div>
+<div id="pop-up">
+</div>
+<script>
+    function login() {
+        $('#pop-up').css("display", "block");
+        var window = $("#pop-up"),
+        undo = $(".li-a")
+                .bind("click", function () {
+                    window.data("kendoWindow").open();
+                    undo.hide();
+                });
+
+        var onClose = function () {
+            undo.show();
+
+        }
+
+        if (!window.data("kendoWindow")) {
+            window.kendoWindow({
+                width: "15%",
+                title: "LogIn",
+                actions: [
+                    "Pin",
+                    "Minimize",
+                    "Maximize",
+                    "Close"
+                ],
+                position: {
+
+                    top: 58,
+                    left: 735
+                },
+                close: onClose
+            });
+        }
+
+
+
+    }
+    $("#MyPage").click(login)
+
+</script>
 <script src="~/Scripts/app/MaingPage.js"></script>

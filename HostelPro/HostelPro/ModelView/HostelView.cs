@@ -17,7 +17,7 @@ namespace HostelPro.ModelView
         public Customer CUS { get; set; }
         public Booking bok { get; set; }
 
-        public List<HostelToRom> hostelTorom { get; set; }
+ 
 
 
         public HostelView()
@@ -30,7 +30,7 @@ namespace HostelPro.ModelView
             bed = new List<BED>();
             CUS = new Customer();
             bok = new Booking();
-            hostelTorom=new List<HostelToRom>();
+         
         }
 
 

@@ -16,5 +16,6 @@ namespace HostelPro.Models
         public int? RoomId { get; set; }
 
         public virtual Room Room { get; set; }
+       
     }
 }

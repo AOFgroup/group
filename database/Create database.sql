@@ -41,14 +41,10 @@ CREATE table [Image]
 CREATE TABLE Room
 (
 ID INT IDENTITY  NOT NULL PRIMARY KEY,
-RoomNumber int NOT NULL
+RoomNumber int NOT NULL,
+HostelId int not null
 )
-CREATE TABLE HostelToRom
-(
-ID int identity (1,1)  NOT NULL PRIMARY KEY,
-RoomID INT NOT NULL foreign key references Room(ID),
-HostelId int NOT NULL foreign key references Hostel(ID)
-)
+
 CREATE TABLE BED
 (
  ID int identity (1,1) NOT NULL Primary Key,
@@ -76,3 +72,4 @@ CREATE TABLE BookingBed
 
 
 
+Drop table [Image], BookingBed,Hostel,City,BED,Room,Booking,Customer,HostelRole

@@ -46,7 +46,7 @@ namespace HostelPro.Controllers
 
             return PartialView("_City");
         }
-        public ActionResult Filter(string DateStart,string DateEnd,HostelView HostelView)
+        public ActionResult Filter(string DateStart,string DateEnd)
         {
             
            
@@ -54,6 +54,9 @@ namespace HostelPro.Controllers
             //DataClassDataContext dt = new DataClassDataContext();
             //var beds = dt.AvailibleBeds(start,end).ToList();
             //codeFirst
+
+            DateTime start = Convert.ToDateTime(DateStart);
+            DateTime end = Convert.ToDateTime(DateEnd);
             
             var evailibleBeds = db.Database.SqlQuery<AllBeds>("AvailibleBeds @DateStart={0},@DateEnd={1}",DateStart,DateEnd).ToList();
             BedFilter filter = new BedFilter();

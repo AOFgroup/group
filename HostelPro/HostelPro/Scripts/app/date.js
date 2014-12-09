@@ -22,7 +22,7 @@
     function callback(data)
     {
 
-        $('.view-body').replaceWith(datas)
+        $('.view-body').replaceWith(data)
     }
 
 

@@ -30,7 +30,7 @@ ALTER PROCEDURE AvailibleBeds @DateStart date, @DateEnd date
 AS 
 DECLARE @DURATION int, @EXISTING DATE
 SET @DURATION=(DATEDIFF(DAY,@DateStart,@DateEnd))
-SELECT B.ID as BedId , R.ID as RoomId,  BB.DateStart,  BB.DateEnd,h.Name as Hostel,h.ID as HotelId From dbo.BED as B 
+SELECT B.ID as BedId , R.ID as RoomId,  BB.DateStart,  BB.DateEnd,h.Name as Hostel,h.ID as HostelId From dbo.BED as B 
 left join BookingBed as BB on BB.BedId=B.ID
 left join Room as R on R.ID=B.RoomId
 left join Hostel as h on h.ID=R.HostelId

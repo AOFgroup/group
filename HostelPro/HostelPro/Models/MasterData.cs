@@ -4,6 +4,7 @@ namespace HostelPro.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using HostelPro.ModelView;
 
     public partial class MasterData : DbContext
     {
@@ -77,8 +78,6 @@ namespace HostelPro.Models
             modelBuilder.Entity<Hostel>()
                 .Property(e => e.Information)
                 .IsUnicode(false);
-
-           
 
             modelBuilder.Entity<HostelRole>()
                 .Property(e => e.Name)

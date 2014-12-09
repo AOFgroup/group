@@ -1,5 +1,5 @@
-exec createBooking 1,'Oleksandr','2423232','olkly85@gmail.com','password','sdfsadf',3,1,'2014-12-06','2014-12-09',null,
-2
+exec createBooking 1,'Oleksandr','2423232','olkly85@gmail.com','password','sdfsadf',3,1,'2014-12-01','2014-12-03',null,
+1
 /*Change BED ID*/
 
 alter  PROCEDURE createBooking
@@ -28,11 +28,11 @@ BEGIN
 INSERT INTO Customer VALUES(@CusName,@Phone,@Email,@Hash,@Salt,2)
 SET @CustomerId=(Select Customer.ID from Customer where Customer.Email=@Email)/*returns id of inserted row on aoutincrement*/
 END
-INSERT INTO Booking (CustomerId,TotalSum) values  (@CustomerId,200)
-select @BookingId=SCOPE_IDENTITY()
 IF @AVAILIBLE=1
 BEGIN
  /*Check the last bedid*/
+ INSERT INTO Booking (CustomerId,TotalSum) values  (@CustomerId,200)
+select @BookingId=SCOPE_IDENTITY()
 exec LastID @DateStart,@DateEnd,@RoomId,@FirstBedId OUTPUT
 PRINT @AVAILIBLE
 WHILE @Count<=@NumberOfbeds

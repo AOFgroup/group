@@ -19,12 +19,13 @@ ORDER BY B.ID asc
 )
 
 DECLARE @INT INT 
-exec AvailibleBeds'2014-12-15','2014-12-08',1,@INT OUTPUT
+exec AvailibleBeds'2014-12-02','2014-12-06',1,@INT OUTPUT
 PRINT @INT
 
 
 
 /*WORKS*/
+/*changed the >= to >*/
 ALTER PROCEDURE AvailibleBeds @DateStart date, @DateEnd date 
 AS 
 DECLARE @DURATION int, @EXISTING DATE
@@ -38,8 +39,8 @@ WHERE B.ID NOT IN
 SELECT BED.ID FROM BED 
 left join BookingBed  on BookingBed.BedId=B.ID
 left join Room  on Room.ID=BED.RoomId
-WHERE BookingBed.DateEnd>=@DateStart
-and   BookingBed.DateStart<=@DateEnd
+WHERE BookingBed.DateEnd>@DateStart
+and   BookingBed.DateStart<@DateEnd
 )
 
 
@@ -48,7 +49,7 @@ and   BookingBed.DateStart<=@DateEnd
 
 
 DECLARE @INT INT 
-exec AvailibleBeds '2014-12-01','2014-12-05',2,@INT OUTPUT
+exec AvailibleBeds '2014-12-09','2014-12-12',2,@INT OUTPUT
 PRINT @INT
 
 /*works*/

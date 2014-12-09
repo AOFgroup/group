@@ -731,6 +731,7 @@
     <Content Include="Views\Hostels\FindBeds.cshtml" />
     <Content Include="Views\Hostels\_Date.cshtml" />
     <Content Include="Views\Hostels\_City.cshtml" />
+    <Content Include="Views\Hostels\_filteredDates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

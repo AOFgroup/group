@@ -1,0 +1,17 @@
+﻿@using HostelPro.Models
+@model HostelPro.ModelView.BedFilter
+<ul class="view-body">
+    @foreach (Hostel hostel in Model.hostel)
+    {
+        var price = hostel.Roms.Min(s => s.BEDs.Min(r => r.Price));
+        if (price != null)
+        {
+            <li>
+                <a class="item-con">
+                    <h5>@hostel.Name</h5>
+                    <p>From @price dk</p>
+                </a>
+            </li>
+        }
+    }
+</ul>

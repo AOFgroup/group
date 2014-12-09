@@ -46,19 +46,28 @@ namespace HostelPro.Controllers
 
             return PartialView("_City");
         }
-        public JsonResult Filter(string DateStart,string DateEnd)
+        public ActionResult Filter(string DateStart,string DateEnd)
         {
-            DateTime start = Convert.ToDateTime(DateStart);
-            DateTime end = Convert.ToDateTime(DateEnd);
-            DataClassDataContext dt = new DataClassDataContext();
+            
+           
+            ////database first
+            //DataClassDataContext dt = new DataClassDataContext();
+            //var beds = dt.AvailibleBeds(start,end).ToList();
             //codeFirst
             
-            var evailibleBeds = db.Database.SqlQuery<AllBeds>("AvailibleBeds @DateStart={0},@DateEnd={1}",start,end).ToList();
-            //database first
-            var beds = dt.AvailibleBeds(start,end).ToList();
-           
+            var evailibleBeds = db.Database.SqlQuery<AllBeds>("AvailibleBeds @DateStart={0},@DateEnd={1}",DateStart,DateEnd).ToList();
+            BedFilter filter = new BedFilter();
+             foreach (var item in evailibleBeds)
+             {
+                 filter.hostel = db.Hostels.Where(h => h.ID == item.HostelId).ToList();
+                 filter.bed = db.BEDs.Where(b => b.ID == item.BedId).ToList();
+                 filter.room = db.Rooms.Where(r=>r.ID==item.RoomId).ToList();
+                 
 
-            return Json(DateEnd , JsonRequestBehavior.AllowGet);
+             }
+             
+
+            return PartialView("_filteredDates",filter);
         }
 
         // GET: Hostels/Details/5

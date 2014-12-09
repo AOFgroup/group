@@ -19,7 +19,7 @@ ORDER BY B.ID asc
 )
 
 DECLARE @INT INT 
-exec LastID '2014-12-15','2014-12-08',1,@INT OUTPUT
+exec AvailibleBeds'2014-12-15','2014-12-08',1,@INT OUTPUT
 PRINT @INT
 
 
@@ -29,9 +29,10 @@ ALTER PROCEDURE AvailibleBeds @DateStart date, @DateEnd date
 AS 
 DECLARE @DURATION int, @EXISTING DATE
 SET @DURATION=(DATEDIFF(DAY,@DateStart,@DateEnd))
-SELECT B.ID , R.ID as RoomId,  BB.DateStart,  BB.DateEnd From dbo.BED as B 
+SELECT B.ID as BedId , R.ID as RoomId,  BB.DateStart,  BB.DateEnd,h.Name as Hostel,h.ID as HotelId From dbo.BED as B 
 left join BookingBed as BB on BB.BedId=B.ID
 left join Room as R on R.ID=B.RoomId
+left join Hostel as h on h.ID=R.HostelId
 WHERE B.ID NOT IN
 (
 SELECT BED.ID FROM BED 
@@ -47,7 +48,7 @@ and   BookingBed.DateStart<=@DateEnd
 
 
 DECLARE @INT INT 
-exec AvailibleBeds '2014-12-06','2014-12-09',2,@INT OUTPUT
+exec AvailibleBeds '2014-12-01','2014-12-05',2,@INT OUTPUT
 PRINT @INT
 
 /*works*/

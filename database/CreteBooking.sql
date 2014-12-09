@@ -18,7 +18,7 @@ alter  PROCEDURE createBooking
 @TotalSum decimal=null, 
 @NumberOfbeds int=null
 as 
-declare  @Customer int,@AVAILIBLE bit,@BookingId int,@Count int
+declare  @Customer int,@AVAILIBLE bit,@BookingId int,@Count int,@FirstBedId int
 set @Count=1
 set @Customer=(select c.ID from Customer as c where c.Email=@Email)
 EXEC CountBeds @DateStart,@DateEnd,@RoomId,@NumberOfbeds,@AVAILIBLE OUTPUT
@@ -32,14 +32,14 @@ INSERT INTO Booking (CustomerId,TotalSum) values  (@CustomerId,200)
 select @BookingId=SCOPE_IDENTITY()
 IF @AVAILIBLE=1
 BEGIN
-
+ /*Check the last bedid*/
+exec LastID @DateStart,@DateEnd,@RoomId,@FirstBedId OUTPUT
 PRINT @AVAILIBLE
 WHILE @Count<=@NumberOfbeds
 BEGIN
-                                                                   /*Check the last bedid*/
-INSERT INTO BookingBed (BedId, BookingId,DateStart,DateEnd) VALUES(@BedId,@BookingId,@DateStart,@DateEnd)
+INSERT INTO BookingBed (BedId, BookingId,DateStart,DateEnd) VALUES(@FirstBedId ,@BookingId,@DateStart,@DateEnd)
 SET @Count=@Count+1
-set @BedId=@BedId+1
+set @FirstBedId=@FirstBedId+1
 END
 END
 

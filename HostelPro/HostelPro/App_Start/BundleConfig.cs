@@ -25,7 +25,9 @@ namespace HostelPro
            
             bundles.Add(new StyleBundle("~/content/css").Include(
                       "~/content/bootstrap.css",
-                      "~/content/site.css"));
+                      "~/content/Site1.css",
+                      "~/content/desktop.css",
+                      "~/content/findbeds.css"));
         }
     }
 }

@@ -5,52 +5,79 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="app-content">
-  <ul class="app-filter">
-   <li>
-        <a class="li-a"><span class="glyphicon glyphicon-flag"></span><br />City</a>
-    </li>
-    <li>
-        <a class="li-a"><span class="glyphicon glyphicon-list-alt"></span><br />Date</a>
-    </li>
-    <li>
-        <a class="li-a"><span class="glyphicon glyphicon-user"></span><br />People</a>
-    </li>
-    <li>
-        <a class="li-a"><span class="glyphicon glyphicon-euro "></span><br />Price</a>
-    </li>
+<div class="container box11">
+    <div class="row">
 
-  </ul>
-    <ul class="view-body">
-        @foreach (Hostel hostel in Model.hostel)
-        {
-            var price = hostel.Roms.Min(s => s.BEDs.Min(r => r.Price));
-            if (price != null)
-            {
-                <li>
-                    <a class="item-con">
-                        <h5>@hostel.Name</h5>
-                        <p>From @price dk</p>
-                    </a>
-                </li>
-
-            }
+        <div class="col-md-8 col-sm-8 col-xs-12">
 
 
+            <div class="app-content">
+                <ul class="app-filter">
+                    <li>
+                        <a class="li-a"><span class="glyphicon glyphicon-flag"></span><br />City</a>
+                    </li>
+                    <li>
+                        <a class="li-a"><span class="glyphicon glyphicon-list-alt"></span><br />Date</a>
+                    </li>
+                    <li>
+                        <a class="li-a"><span class="glyphicon glyphicon-user"></span><br />People</a>
+                    </li>
+                    <li>
+                        <a class="li-a"><span class="glyphicon glyphicon-euro "></span><br />Price</a>
+                    </li>
 
-        }
+                </ul>
+                <ul class="view-body">
+                    @foreach (Hostel hostel in Model.hostel)
+                    {
+                        var price = hostel.Roms.Min(s => s.BEDs.Min(r => r.Price));
+                        if (price != null)
+                        {
+                            <li>
+                                <a class="item-con">
+                                    <h5>@hostel.Name</h5>
+                                    <p>From @price dk</p>
+                                </a>
+                            </li>
+
+                        }
 
 
-    </ul>
+
+                    }
 
 
-</div>
-<div id="pop-up">
+                </ul>
 
 
-</div>
+            </div>
+
+
+            <div id="pop-up">
+
+
+            </div>
+
+
+        </div> <!-- end class="col-md-8 col-sm-8 col-xs-12">-->
+
+
+
+        <!-- side bar below -->
+        <div id="sidebox" class="col-md-4  col-sm-4 box22 col-xs-12">
+            <h4>partial or widget</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam sunt quidem eaque placeat. Doloribus, harum. Quia nemo nobis ratione, culpa labore incidunt excepturi id voluptatum sed impedit veritatis dignissimos maiores!</p>
+
+        </div>
+
+
+
+        </div> <!-- end row -->
+</div> <!-- end container -->
+
+
 <script>
-    
+
 </script>
 
 <script src="~/Scripts/app/findbed.js"></script>

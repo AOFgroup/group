@@ -60,7 +60,7 @@ namespace HostelPro.Controllers
             
             var evailibleBeds = db.Database.SqlQuery<AllBeds>("AvailibleBeds @DateStart={0},@DateEnd={1}",DateStart,DateEnd).ToList();
             BedFilter filter = new BedFilter();
-            //var booking = db.Database.ExecuteSqlCommand("createBooking @DateStart={0}, @DateEnd={1}", HostelView.BookingBed.DateStart, HostelView.BookingBed.DateEnd);
+          //  var booking = db.Database.ExecuteSqlCommand("createBooking @DateStart={0}, @DateEnd={1}", HostelView.BookingBed.DateStart, HostelView.BookingBed.DateEnd);
             
             foreach (var item in evailibleBeds)
              {

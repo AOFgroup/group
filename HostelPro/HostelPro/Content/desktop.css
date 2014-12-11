@@ -7,18 +7,23 @@
    ========================================================================== */
 
 
+section{
+	
+	margin-top: 20px;
+}
+
 .errorbox{
 	background-color: xaqua;
 	
 }
 .errorbox-widget{
 	background-color: xgreen;
-	margin-top: 0px;
+	margin-top: 20px;
 	xmargin-bottom: 27px;
 }
 
 .errortitle{
-	margin-top: 1.3em;
+	margin-top: 0.3em;
 
 }
 .error-p-text{
@@ -29,6 +34,7 @@
 	margin:0 auto;
 
 }
+
 .img-thumbnail {
 	
 	height: auto;
@@ -38,6 +44,7 @@
 	border-radius: 0px;
 	margin-bottom: 5px;
 }
+
 
 /* bootstrap media queries */
 /**/

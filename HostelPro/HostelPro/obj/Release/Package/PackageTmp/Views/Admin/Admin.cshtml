@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model  HostelPro.ModelView.HostelView
+            <h3 id="lable">HostelPro</h3>
+<div class="navigation-menu">
+    <div>
+        <ul>
+            <li><a data-tab="#Customer"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp; Customers</a></li>
+            <li><a data-tab="#Hostel"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp; Hostels</a></li>
+            <li><a data-tab="#City"><span class="glyphicon glyphicon-stats"></span>&nbsp;&nbsp; Cities</a></li>
+            <li><a data-tab="#Room"><span class="glyphicon glyphicon-stop"></span>&nbsp;&nbsp; Rooms</a></li>
+            <li><a data-tab="#Booking"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp; Bookings</a></li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+   
+    <div class="tab" id="Hostel">
+        <h4>Hostels</h4>
+        @Html.ActionLink("Add New", "Create", "Hostels", null, new { @class = "btn btn-default" })
+        @(Html.Kendo().Grid(Model.hostel).Name("grd-h").Columns(col => {
+
+        col.Bound(c=>c.Name);
+        col.Bound(c => c.Address);
+        col.Bound(c => c.City.CITY1).Title("City");
+        col.Bound(c => c.Phone);
+        col.Bound(c => c.Email);
+        col.Bound(c => c.Information);
+
+    }).Pageable().Sortable().Filterable())
+    </div>
+    <div class="tab" id="City">
+        <h4>Cities</h4>
+        @(Html.Kendo().Grid(Model.city).Name("grd-c").Columns(col => {
+
+        col.Bound(c => c.CITY1).Title("City");
+        col.Bound(c => c.ZIP);
+
+    }).Pageable().Sortable().Filterable())
+    </div>
+    <div class="tab" id="Room">
+        <h4>Rooms</h4>
+        @(Html.Kendo().Grid(Model.room).Name("grd2-r").Columns(col => {
+        col.Bound(c => c.Hostel.Name).Title("Hostel Name");
+        col.Bound(c => c.ID).Title("Room Nr.");
+       
+
+    }).Pageable().Sortable().Filterable())
+        <hr />
+        <h4>Beds</h4>
+        @(Html.Kendo().Grid(Model.bed).Name("grd2-b").Columns(col =>
+        {
+            col.Bound(c => c.Room.ID).Title("Room Id");
+            col.Bound(c => c.ID).Title("Bed Id");
+            col.Bound(c => c.Price).Title("Price");
+        }).Pageable().Sortable().Filterable())
+    </div>
+    <div class="tab" id="Customer">
+        <h4>Customers</h4>
+        @*@(Html.Kendo().Grid(Model.customer).Name("grd2-c").Columns(col => {
+        col.Bound(c=>c.Name);
+        col.Bound(c => c.Email);
+        col.Bound(c => c.Phone);
+        col.Bound(c => c.HostelRole.Name).Title("Role");
+        col.Bound(c => c.Bookings);
+
+    }).Pageable().Sortable().Filterable())*@
+    </div>
+    <div class="tab" id="Booking">
+        <h4>Bookings</h4>
+        @*@(Html.Kendo().Grid(Model.booking).Name("grd2-b").Columns(col => {
+        col.Bound(c => c.Customer.Name);
+        col.Bound(c => c.BookingDate);
+        col.Bound(c => c.);
+        col.Bound(c => c.TotalSum);
+
+    }).Pageable().Sortable().Filterable())*@
+    </div>
+
+
+   
+
+</div>
+<script src="~/Scripts/app/admin.js"></script>
+@section scripts{
+    
+    
+    }
+

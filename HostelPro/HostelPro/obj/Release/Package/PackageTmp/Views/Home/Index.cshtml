@@ -1,0 +1,123 @@
+﻿@model HostelPro.ModelView.HostelView
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="buttons">
+    <div id="window">
+        @Html.Kendo().TextBoxFor(c => c.CUS.Name)
+        <br /><br />
+        @Html.Kendo().TextBoxFor(c => c.CUS.Hash)
+        <br />
+        <br />
+        <input type="button" class="btn btn-default" value="Register" id="register" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" class="btn btn-default" value="Login" />
+        <br />
+        <br />
+        </div>
+    <div id="btn1">
+     <div id="window2">
+         @Html.Kendo().TextBoxFor(c => c.CUS.Name)
+         <br /><br />
+         @Html.Kendo().TextBoxFor(c => c.CUS.Hash)
+         <br /><br />
+         @Html.Kendo().TextBoxFor(c => c.CUS.Email)
+         <br /><br />
+         @Html.Kendo().NumericTextBoxFor(c => c.CUS.Phone)
+         <br /><br />
+         @*<input type="button" class="btn btn-default" value="Login" id="loginBtn" />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*@
+         <input type="button" id="btn-login" class="btn btn-default" value="Register" />
+         <br />
+         <br />
+     </div>
+        @(Html.Kendo().MobileView()
+    .Name("button-view")
+    .Title("Inbox")
+    .Content(
+   
+    @<text>
+        
+        <div class="wrapper-offer-book">
+
+            <img id="mobile-button0" /> />
+
+
+
+            @(Html.Kendo().MobileButton().Name("Offer")
+          .Text("Last minute offer 75% off")
+            );
+            @(Html.Kendo().MobileButton()
+                  .Name("book")
+            .Text("Book")
+            )
+
+        </div>
+        <div>
+   
+            @Html.ActionLink("Find Bed", "FindBeds", "Hostels", null, new { @id = "mobile-button1" })
+          
+            @(Html.Kendo().MobileButton()
+                        .Name("mobile-button2")
+                        .Text("CheapOffers")
+                        
+                       
+                        
+            )
+        </div>
+        <div>
+            @(Html.Kendo().MobileButton().Name("Home").Text("Today | Current Location | Support"))
+
+        </div>
+    </text>)
+
+        )
+    </div>
+    <div id ="btn1">
+
+    </div>
+</div>
+<div id="pop-up">
+</div>
+<script>
+    function login() {
+        $('#pop-up').css("display", "block");
+        var window = $("#pop-up"),
+        undo = $(".li-a")
+                .bind("click", function () {
+                    window.data("kendoWindow").open();
+                    undo.hide();
+                });
+
+        var onClose = function () {
+            undo.show();
+
+        }
+
+        if (!window.data("kendoWindow")) {
+            window.kendoWindow({
+                width: "15%",
+                title: "LogIn",
+                actions: [
+                    "Pin",
+                    "Minimize",
+                    "Maximize",
+                    "Close"
+                ],
+                position: {
+
+                    top: 58,
+                    left: 735
+                },
+                close: onClose
+            });
+        }
+
+
+
+    }
+    $("#MyPage").click(login)
+
+</script>
+<script src="~/Scripts/app/MaingPage.js"></script>

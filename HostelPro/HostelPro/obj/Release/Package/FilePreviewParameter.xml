@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="ivolta.dk/HostelPro" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\oleksandr\\Documents\\GitHub\\group\\HostelPro\\HostelPro\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\oleksandr\\Documents\\GitHub\\group\\HostelPro\\HostelPro\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="HostelProConnectionString-Web.config Connection String" description="" value="Data Source=.\sqlexpress;Initial Catalog=HostelPro;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\oleksandr\\Documents\\GitHub\\group\\HostelPro\\HostelPro\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HostelProConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="MasterData-Web.config Connection String" description="" value="Data Source=mssql4.unoeuro.com;Initial Catalog=ivolta_dk_db;User ID=ivolta_dk;Password=Oleksandr2007" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\oleksandr\\Documents\\GitHub\\group\\HostelPro\\HostelPro\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MasterData']/@connectionString" />
+  </parameter>
+</parameters>

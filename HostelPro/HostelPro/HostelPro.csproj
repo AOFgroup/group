@@ -147,11 +147,6 @@
     <Compile Include="Controllers\HostelsController.cs" />
     <Compile Include="DataAccess\Login.cs" />
     <Compile Include="DataAccess\PasswordHasher.cs" />
-    <Compile Include="DataClass.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataClass.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,6 +175,8 @@
     <Content Include="bin\HostelPro.pdb" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\desktop.css" />
+    <Content Include="Content\findbeds.css" />
     <Content Include="Content\kendo\2014.2.1008\Black\editor.png" />
     <Content Include="Content\kendo\2014.2.1008\Black\imagebrowser.png" />
     <Content Include="Content\kendo\2014.2.1008\Black\indeterminate.gif" />
@@ -395,6 +392,7 @@
     <Content Include="Content\kendo\2014.2.1008\Uniform\slider-v.gif" />
     <Content Include="Content\kendo\2014.2.1008\Uniform\sprite.png" />
     <Content Include="Content\kendo\2014.2.1008\Uniform\sprite_2x.png" />
+    <Content Include="Content\Site1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -420,11 +418,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\kendo\2014.2.1008\images\kendoui.ttf" />
     <Content Include="Content\kendo\2014.2.1008\images\kendoui.woff" />
-    <Content Include="DataClass.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClass.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
+    <None Include="Properties\PublishProfiles\HostelPro.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\google-map-api.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -726,10 +720,6 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Admin.cshtml" />
-    <Content Include="Views\Hostels\Create.cshtml" />
-    <Content Include="Views\Hostels\Delete.cshtml" />
-    <Content Include="Views\Hostels\Details.cshtml" />
-    <Content Include="Views\Hostels\Edit.cshtml" />
     <Content Include="Views\Hostels\Index.cshtml" />
     <Content Include="Views\Cities\Create.cshtml" />
     <Content Include="Views\Cities\Delete.cshtml" />
@@ -744,6 +734,10 @@
     <Content Include="Views\Booking\Index.cshtml" />
     <Content Include="Views\Booking\Thank_You.cshtml" />
     <Content Include="Views\Booking\_HostelInformation.cshtml" />
+    <Content Include="Views\Hostels\Create.cshtml" />
+    <Content Include="Views\Hostels\Delete.cshtml" />
+    <Content Include="Views\Hostels\Details.cshtml" />
+    <Content Include="Views\Hostels\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -758,11 +752,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DataClass.dbml.layout">
-      <DependentUpon>DataClass.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

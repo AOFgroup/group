@@ -1,0 +1,63 @@
+﻿@using HostelPro.Models
+@model List<HostelPro.ModelView.AllBeds>
+@{
+    ViewBag.Title = "FindBeds";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="app-content">
+    <ul class="app-filter">
+        <li>
+            <a class="li-a"><span class="glyphicon glyphicon-flag"></span><br />City</a>
+        </li>
+        <li>
+            <a class="li-a"><span class="glyphicon glyphicon-list-alt"></span><br />Date</a>
+        </li>
+        <li>
+            <a class="li-a"><span class="glyphicon glyphicon-user"></span><br />People</a>
+        </li>
+        <li>
+            <a class="li-a"><span class="glyphicon glyphicon-euro "></span><br />Price</a>
+        </li>
+ 
+    </ul>
+    <ul class="view-body">
+        @foreach (var hostel in Model.Select(s => s.Hostel).Distinct())
+        {
+            var price = Model.Where(s => s.Hostel == hostel).Min(s => s.Price);
+            var countBed = Model.Where(s => s.Hostel == hostel).Select(s => s.BedId).Count();
+            var roomId = Model.Where(s => s.Hostel == hostel).Select(r => r.RoomId).Min();
+            var city = Model.Where(m => m.Hostel == hostel);
+            if (price != null)
+            {
+                using (Html.BeginForm("index", "booking", FormMethod.Get))
+                {
+                    <li data-city-name="">
+                        <a class="item-con">
+                            <h5>@hostel</h5>
+                            <p class="pr-li">From @price dk</p>
+                            <p class="ci-lo">@city.First().City</p>
+                            <p>@countBed beds</p>
+                            @Html.HiddenFor(m => m.First().RoomId, roomId)
+                            @Html.HiddenFor(m => m.First().DateStart, Model.Select(m => m.DateEnd).First())
+                            @Html.HiddenFor(m => m.First().DateEnd, Model.Select(m => m.DateStart).First())
+                        </a>
+
+                    </li>
+                }
+            }
+        }
+
+    </ul>
+
+
+
+   
+
+
+</div>
+<div id="pop-up">
+
+
+</div>
+<script src="~/Scripts/app/findbed.js"></script>

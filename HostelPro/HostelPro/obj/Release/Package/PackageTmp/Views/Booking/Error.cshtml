@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- =======================================================-->
+ 
+<section class="thesection">
+    <div class="row">
+
+        <div class="col-md-8 ">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <h2 class="errortitle">Error page</h2>
+                    <hr>
+                </div>
+                <div class="col-md-6 col-sm-6">
+
+                    <p class="error-p-text">Sorry, the page you have requested is temporarity unavailable</p>
+
+                </div>
+                <div class="col-md-6  col-sm-6 errorbox">
+                    <img src="http://placekitten.com/g/300/300" alt="" class="center-block img-box1 img-responsive img-thumbnail">
+                </div>
+
+            </div>
+
+        </div> <!-- end col-md-8 -->
+        <!-- for the widget -->
+
+        <!-- for the widget -->
+        <div class="col-md-4 errorbox-widget">
+            @Html.Partial("_HostelInformation")
+
+        </div>
+       
+
+    </div>
+
+    <!-- Standard button -->
+
+    <a class="btn btn-default" href="http://www.liverpoolfc.com/welcome-to-liverpool-fc">going to hostels</a>
+
+
+     
+</section> <!-- end of section class="thesection" -->
+
+
+<!-- =====================================sorry page==================-->
+

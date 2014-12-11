@@ -277,6 +277,9 @@ namespace HostelPro.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+            
         [HttpPost]
         public JsonResult City(HotelRoomBed CityView)
         {
@@ -285,16 +288,30 @@ namespace HostelPro.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    db.Cities.Add(CityView.City);
-                    db.SaveChanges();
-                    MasterData newDb = new MasterData();
-                    return Json(newDb.Cities, JsonRequestBehavior.AllowGet);
+                    try
+                    {
+                        db.Cities.Add(CityView.City);
+
+                        db.SaveChanges();
+                   
+                    }
+                   
+                   catch
+                    {
+
+
+
+                    }
+                    
+
+
+                    return Json(CityView.City, JsonRequestBehavior.AllowGet);
                 }
 
             }
             return Json(db.Cities, JsonRequestBehavior.AllowGet);
         }
-
+        
 
     }
 

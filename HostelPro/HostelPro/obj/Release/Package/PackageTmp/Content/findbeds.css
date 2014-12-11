@@ -1,0 +1,163 @@
+﻿/* bootstrap media queries */
+/*
+
+
+@media screen and (min-width: 1200px){}
+@media screen and (min-width: 992px){}
+@media screen and (min-width: 1024px){}
+@media screen and (min-width: 992px){}
+@media screen and (min-width: 768px){}
+@media screen and (min-width: 600px){}
+@media screen and (min-width: 480px){}
+
+*/
+
+ /*CheckBedPage*/
+
+         .app-content{
+           margin-top:4em;
+           xfloat:left;
+         }
+      .app-content{
+        
+         xmargin-left:-6%;
+         clear:both;
+      }
+       .app-content .app-filter li  {
+           display:inline;
+        }
+
+         span {
+        margin-top:3%;
+
+         }
+       .app-content .app-filter li a{
+          display:inline-block;
+           height:3.5em;
+           width:4.5em;
+           xfloat:left;
+           color:white;
+           border:initial;
+           background-color:#3b5998;
+          text-align:center;
+          padding-top:2%;
+          font-size:small;
+          margin:1%;
+          margin-top:1%;
+       
+        }
+
+      .glyphicon{
+
+          margin-left:4%;
+
+      }
+
+
+
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {  
+
+
+
+} /*end @media screen and (min-width: 1200px)*/
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {  
+
+/* ==========================================================================
+   box button
+   ========================================================================== */
+.app-content .app-filter li a {
+  padding-top: 0%;
+}
+
+} /*end @media screen and (min-width: 992px) */
+
+
+/* Small devices (tablets, 769px and up) */
+@media screen and (min-width: 769px) {  
+
+/* ==========================================================================
+   box button
+   ========================================================================== */
+.app-content .app-filter li a {
+width: 22%;
+}
+
+/* ==========================================================================
+   findBeds page
+   ========================================================================== */
+
+
+.menu-findBeds{
+    display: inline-block;
+
+}
+
+.box11{
+	 xmargin-top: 3em;
+     xbackground-color: orange;
+  
+}
+
+.box22{
+	margin-top: 5em;
+	margin-bottom: 1em;
+	xbackground-color: aqua;
+	xclear: both;
+}
+
+.app-content{
+	margin-top: 5em;
+	margin-bottom: 1em;
+}
+
+.app-filter{
+	xbackground-color: green;
+}
+
+
+
+} /*end @media screen and (min-width: 769px)*/
+
+
+@media screen and (max-width: 768px){
+
+.box22{
+	margin-top: 5em;
+	margin-bottom: 1em;
+	xbackground-color: aqua;
+	clear: both;
+}
+
+#sidebox{
+	xdisplay: none;
+	margin-top: 2em;
+	position: relative;
+	top:1em;
+}
+
+.app-content{
+	width: 100%;
+	xbackground-color: green;
+}
+.app-filter{
+	width: 100%;
+	xbackground-color: orange;
+}
+
+
+
+.app-content .app-filter li a {
+	
+	width: 20%;
+	height: auto;
+}
+
+
+
+
+} /*end @media screen and (max-width: 768px)*/

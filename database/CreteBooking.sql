@@ -2,7 +2,7 @@ exec createBooking 1,'Oleksandr','2423232','olkly85@gmail.com','password','sdfsa
 1
 /*Change BED ID*/
 
-alter  PROCEDURE createBooking
+CREATE  PROCEDURE createBooking
 /*Customer*/ 
 @CustomerId int,
 @CusName varchar=null,
@@ -23,10 +23,14 @@ set @Count=1
 set @Customer=(select c.ID from Customer as c where c.Email=@Email)
 EXEC CountBeds @DateStart,@DateEnd,@RoomId,@NumberOfbeds,@AVAILIBLE OUTPUT
 print @AVAILIBLE 
-IF @CustomerId IS NULL
+IF @Customer IS NULL
 BEGIN
 INSERT INTO Customer VALUES(@CusName,@Phone,@Email,@Hash,@Salt,2)
 SET @CustomerId=(Select Customer.ID from Customer where Customer.Email=@Email)/*returns id of inserted row on aoutincrement*/
+END
+ELSE
+BEGIN
+set @CustomerId=@Customer 
 END
 IF @AVAILIBLE=1
 BEGIN

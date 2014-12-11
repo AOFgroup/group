@@ -1,4 +1,4 @@
-alter PROCEDURE LastID @DateStart date, @DateEnd date, @roomid int, @Bid int output
+create PROCEDURE LastID @DateStart date, @DateEnd date, @roomid int, @Bid int output
 AS 
 DECLARE @DURATION int, @EXISTING DATE
 SET @DURATION=(DATEDIFF(DAY,@DateStart,@DateEnd))
@@ -11,8 +11,8 @@ WHERE B.ID NOT IN
 SELECT BED.ID FROM BED 
 left join BookingBed  on BookingBed.BedId=B.ID
 left join Room  on Room.ID=BED.RoomId
-WHERE BookingBed.DateEnd>=@DateStart
-and   BookingBed.DateStart<=@DateEnd
+WHERE BookingBed.DateEnd>@DateStart
+and   BookingBed.DateStart<@DateEnd
 )
 and R.ID=@roomid
 ORDER BY B.ID asc

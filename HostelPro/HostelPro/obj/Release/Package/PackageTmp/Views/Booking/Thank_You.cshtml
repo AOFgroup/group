@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Thank_You";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- =======================================================-->
+<section class="thesection">
+    <div class="row">
+
+        <div class="col-md-8 ">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <h2 class="errortitle">Thank you for your booking</h2>
+                    <hr>
+                </div>
+                <div class="col-md-6 col-sm-6">
+
+                    <p class="error-p-text">Recept</p>
+                    <ul>
+                        <li>Custumer Name</li>
+                        <li>City</li>
+                        <li>Hostel</li>
+                        <li>Number of beds</li>
+                        <li>Start Date</li>
+                        <li>End Date</li>
+                        <li>Total Price</li>
+                        <li>Customer E-mail</li>
+                    </ul>
+                    <br />
+                    <ul>
+                        <li>E-mail for contact the site owners</li>
+                        <li>Phone for contact the site owners</li>
+                    </ul>
+
+                </div>
+                <div class="col-md-6  col-sm-6 errorbox">
+                    <img src="http://placekitten.com/g/300/300" alt="" class="center-block img-box1 img-responsive img-thumbnail">
+                    
+                </div>
+
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-6 pull-left">
+                    <a class="btn btn-default btn-warning btn-lg" href="http://google.com">Cancel</a>
+                </div>
+                <div class="col-md-6 pull-right">
+                   
+                    <a class="btn btn-default btn-primary pull-right btn-lg" href="http://google.com">Home</a>
+                </div>
+            </div>
+
+        </div> <!-- end col-md-8 -->
+        <!-- for the widget -->
+        <div class="col-md-4 errorbox-widget ">
+            @Html.Partial("_HostelInformation")
+        </div>
+
+
+
+        <!-- Standard button -->
+
+      
+
+    </div>
+</section> <!-- end of section class="thesection" -->
+
+<!-- =======================================================-->
+
+
+
+  

@@ -1,0 +1,489 @@
+﻿/*For ipads or big screens some exapmle*/
+
+#products
+{
+    visibility:visible;
+}
+    body {
+    padding-top: 1%;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*oleksandr css*/
+.right-li
+{
+   float:right;
+
+}
+#button-view
+{
+
+    height:80em;
+
+}
+.navbar-fixed-top{
+
+    background-color:black;
+    opacity:0.5;
+}
+#mobile-button1,#mobile-button2
+{
+ background-color:#dfe3ee;
+ color:white;
+ height:10em;
+ width:45%;
+ float:left;
+ text-decoration:none;
+ visibility:visible;
+ float:left;
+ text-align: center; 
+
+margin-top:0%;
+}
+#mobile-button1
+{
+margin-right:10%;
+
+
+}
+
+
+
+
+#mobile-button3,#mobile-button0
+{
+ background-color:lightgray;
+ color:white;
+ height:18em;
+ width:100%;
+ float:left;
+ text-decoration:none;
+ visibility:visible;
+ float:left;
+ text-align: center;
+ clear:both;
+}
+#menu{
+  /*height:5em;*/
+  /*background-color:transparent;*/
+  border-bottom:none;
+
+
+}
+.head-cus
+{
+
+  margin-left:10em;
+
+}
+
+#window,#window2
+{
+
+    display:none;
+
+}
+/*admin page*/
+.navigation-menu {
+  
+    margin-left:1em;
+    float: left;
+    width: 20%;
+    height:40em;
+    background-color:black;
+    opacity:0.7;
+}
+.navigation-menu ul li,a 
+{
+    list-style:none;
+    color:white;
+    text-decoration:none;
+    font-family:sans-serif;
+    font-size:large;
+    margin-top:5%;
+
+}
+a:hover{
+
+    cursor:pointer;
+    color:lightblue;
+    text-decoration:none;
+    color:wheat;
+}
+.content
+{
+  
+    margin-left:2%;
+    float:left;
+    width:40%;
+    border:inherit;
+    height:40em;
+
+}
+.content div
+{
+
+    margin-top:5%;
+
+}
+.tab {
+
+    display:none;
+}
+#lable
+{
+    margin-left:50%;
+    font-family:sans-serif;
+}
+.div-left{
+
+    float:left;
+    margin-left:0%;
+    margin-top:2%;
+    
+}
+.ImCity{
+   
+   float:left;
+   clear:both;
+}
+.div-left a
+{
+color:black;
+
+
+}
+
+
+
+#window{
+margin-top:45%;
+
+}
+#city-di
+{
+
+   margin-left:2%;
+}
+/*Icons*/
+.glyphicon 
+{
+    margin-left:2%;
+}
+.buttons
+{
+    margin-left:1%;
+
+}
+#Offer,#book
+{
+ display:none;
+
+}
+.buttons
+{
+margin-top:10%;
+
+}
+body {
+    background-color:#f7f7f7;
+   
+}
+.item-con {
+        display: inline-block;
+        height: 6em;
+        width: 28%;
+        background-color:	#dfe3ee;
+        border: initial;
+        /*background-image: url('../image/back.jpg');*/
+        text-align: center;
+        font-size: small;
+        margin: 1%;
+        font-size: small;
+       
+    }
+
+ .app-content .app-filter li a{
+  
+    display:inline-block;
+     height:5em;
+     width:10em;
+     color:white;
+     border:initial;
+     background-color:#8b9dc3;
+    text-align:center;
+    padding-top:2%;
+    font-size:small;
+     margin:2%;
+    margin-top:6%;
+
+   
+  
+ 
+  }
+ ul li
+ {
+     display:inline;
+     
+     list-style:none;
+
+ }
+
+
+ .view-body p
+{
+background-color:red;
+color:white;
+
+}
+.view-body h5
+{
+
+ padding-top:4px;
+ font-family:sans-serif;
+ color:black;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) 
+{
+    #mobile-button0 {
+        position: relative;
+        margin-top: 4em;
+        margin-left: -1%;
+        height: 10em;
+        content: url('../image/sleep.jpg');
+    }
+
+#mobile-button1,#mobile-button2
+{
+  height:4em;
+  padding-top:20px;
+  
+}
+#mobile-button2
+{
+background-color:red;
+opacity:0.7;
+color:white;
+font-size:large;
+font-weight:600;
+}
+#mobile-button1
+{
+background-color:#3b5998;
+opacity:0.7;
+color:white;
+font-size:large;
+font-weight:600;
+
+
+}
+
+#book
+{
+ display:block;
+ background-color:#3b5998;
+ color:white;
+ height:2em;
+ width:20%;
+ float:left;
+ margin-left:8%;
+ margin-top:4%;
+ margin-bottom:3%;
+ text-decoration:none;
+ visibility:visible;
+ float:left;
+ text-align: center; 
+ font-family:sans-serif;
+ font-size:smaller;
+
+}
+#Offer
+{
+ padding-top:20px;
+ display:block;
+ text-align:right;
+ background-color:transparent;
+ color:white;
+ height:5em;
+ width:70%;
+ float:left;
+ margin-right:0%;
+ margin-top:5%;
+ margin-bottom:3%;
+ text-decoration:none;
+ visibility:visible;
+ float:left;
+ text-align: center;
+ font-family:sans-serif;
+ font-size:small;
+}
+
+#button-view
+{
+
+    height:20em;
+
+}
+footer
+{
+
+    display:none;
+}
+#Home
+{
+ height:3em;
+ width:100%;;
+ visibility:visible;
+ float:left;
+ color:white;
+ background-color:black;
+ margin-left:0%;
+ opacity:0.5;
+ text-align:center;
+ padding-top:4%;
+ 
+
+
+}
+.navbar-header
+{
+    background-color: #afbdd4;
+
+}
+.navbar-toggle
+{
+    background-color:black;
+}
+
+.head-col
+{
+     
+      color:white;
+      font-size:x-large;
+      margin-left:28%; 
+
+}
+.navbar-collapse in
+{
+    background-color:#A7B7E4;
+    border-bottom-color:none;
+
+}/*CheckBedPage*/
+ .app-content{
+   margin-top:30%;
+   float:left;
+ }
+.app-content{
+  
+   margin-left:-6%;
+   clear:both;
+}
+ .app-content .app-filter li
+ {
+     display:inline;
+   
+     
+    
+ }
+ span
+ {
+margin-top:3%;
+
+ }
+ .app-content .app-filter li a{
+    display:inline-block;
+     height:3.5em;
+     width:4.5em;
+     color:white;
+     border:initial;
+     background-color:#3b5998;
+    text-align:center;
+    padding-top:2%;
+    font-size:small;
+   margin:0%;
+    margin-top:3%;
+ 
+  }
+
+.glyphicon{
+
+    margin-left:4%;
+
+}
+    .item-con {
+        display: inline-block;
+        height: 6em;
+        width: 28%;
+        background-color:#6d84b4;
+        border: initial;
+        /*background-image: url('../image/back.jpg');*/
+        text-align: center;
+        font-size: small;
+        margin: 1%;
+        font-size: small;
+    }
+.view-body
+{
+  margin-top:14%;
+  
+  width:auto;
+}
+.view-body p
+{
+background-color:red;
+color:white;
+}
+.view-body h5
+{
+
+ padding-top:1px;
+ font-family:sans-serif;
+ color:white;
+
+}
+.view-body li
+{
+    display:inline;
+    text-decoration:none;
+    
+}
+ /*icons*/
+    body {
+        background-image: url('../image/Star-Background-7.jpg');
+    }
+
+
+	}

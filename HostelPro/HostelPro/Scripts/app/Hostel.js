@@ -19,22 +19,22 @@
     })
 
 
-    function callback(data) {
-        $(".tab").hide()
-        //$("tbody[data-model='model']").replaceWith(data)
-        //$('#CityList option').remove();
-        alert('Hello'+data)
-        //var select = $('#CityList');
-        //console.log(select)
-        //$(select).append('<option value=' + data.ZIP + '>' + value.CITY1 + '</option>')
+    //function callback(data) {
+    //    $(".tab").hide()
+    //    //$("tbody[data-model='model']").replaceWith(data)
+    //    //$('#CityList option').remove();
+    //    alert('Hello'+data)
+    //    //var select = $('#CityList');
+    //    //console.log(select)
+    //    //$(select).append('<option value=' + data.ZIP + '>' + value.CITY1 + '</option>')
         
-        //$.each(data, function (key, value) {
+    //    //$.each(data, function (key, value) {
             
-        //    $(select).append('<option value=' + data.Zip + '>' + value.CITY1 + '</option>')
+    //    //    $(select).append('<option value=' + data.Zip + '>' + value.CITY1 + '</option>')
 
-        //})
+    //    //})
 
-    }
+    //}
 
 
 });

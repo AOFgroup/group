@@ -25,54 +25,103 @@ namespace HostelPro.Controllers
         public ActionResult FindBeds()
         {
             BedFilter BD = new BedFilter();
-            BD.hostel = db.Hostels.ToList();
-            BD.bed = db.BEDs.ToList();
-            BD.room = db.Rooms.ToList();
-            BD.city = db.Cities.ToList();
+            DateTime start = DateTime.Now;
+            DateTime end = start.AddDays(1);
+            List<AllBeds> getBeds = getAllBeds(start.ToShortDateString(), end.ToShortDateString());
+            List<AllBeds> uniq = new List<AllBeds>();
 
-            return View(BD);
-        
+            foreach (AllBeds bed in getBeds)
+            {
+
+
+
+                if (uniq.IndexOf(bed) == -1)
+                {
+                    uniq.Add(bed);
+                }
+            }
+
+            return View(uniq);
+
         }
         public ActionResult Date()
         {
             BedFilter bed = new BedFilter();
-            return PartialView("_Date",bed);
+            return PartialView("_Date", bed);
         }
-       
+
         public ActionResult City()
         {
 
+            var city = db.Cities;
 
-
-            return PartialView("_City");
+            return PartialView("_City", city);
         }
-        public ActionResult Filter(string DateStart,string DateEnd)
+
+
+
+        public List<AllBeds> getAllBeds(string DateStart, string DateEnd)
         {
-            
-           
-            ////database first
-            //DataClassDataContext dt = new DataClassDataContext();
-            //var beds = dt.AvailibleBeds(start,end).ToList();
+            List<AllBeds> allBeds = new List<AllBeds>();
             //codeFirst
+            try
+            {
+                var evailibleBeds = db.Database.SqlQuery<AllBeds>("AvailibleBeds @DateStart={0},@DateEnd={1}", DateStart, DateEnd).ToList();
 
-            DateTime start = Convert.ToDateTime(DateStart);
-            DateTime end = Convert.ToDateTime(DateEnd);
-            
-            var evailibleBeds = db.Database.SqlQuery<AllBeds>("AvailibleBeds @DateStart={0},@DateEnd={1}",DateStart,DateEnd).ToList();
-            BedFilter filter = new BedFilter();
-          //  var booking = db.Database.ExecuteSqlCommand("createBooking @DateStart={0}, @DateEnd={1}", HostelView.BookingBed.DateStart, HostelView.BookingBed.DateEnd);
-            
-            foreach (var item in evailibleBeds)
-             {
-                 filter.hostel = db.Hostels.Where(h => h.ID == item.HostelId).ToList();
-                 filter.bed = db.BEDs.Where(b => b.ID == item.BedId).ToList();
-                 filter.room = db.Rooms.Where(r=>r.ID==item.RoomId).ToList();
-                 
 
-             }
-             
+                foreach (var bed in evailibleBeds)
+                {
+                    AllBeds b = new AllBeds();
+                    b.Hostel = bed.Hostel;
+                    b.RoomId = bed.RoomId;
+                    b.DateStart = bed.DateStart;
+                    b.DateEnd = bed.DateEnd;
+                    b.BedId = bed.BedId;
+                    b.HostelId = bed.HostelId;
+                    b.Price = bed.Price;
+                    b.City = bed.City;
+                    allBeds.Add(b);
+                }
 
-            return PartialView("_filteredDates",filter);
+                DateTime start = Convert.ToDateTime(DateStart);
+                DateTime end = Convert.ToDateTime(DateEnd);
+
+                //var evailibleBeds = db.Database.SqlQuery<AllBeds>("AvailibleBeds @DateStart={0},@DateEnd={1}",DateStart,DateEnd).ToList();
+                BedFilter filter = new BedFilter();
+                //  var booking = db.Database.ExecuteSqlCommand("createBooking @DateStart={0}, @DateEnd={1}", HostelView.BookingBed.DateStart, HostelView.BookingBed.DateEnd);
+
+                foreach (var item in evailibleBeds)
+                {
+                    filter.hostel = db.Hostels.Where(h => h.ID == item.HostelId).ToList();
+                    filter.bed = db.BEDs.Where(b => b.ID == item.BedId).ToList();
+                    filter.room = db.Rooms.Where(r => r.ID == item.RoomId).ToList();
+
+
+
+
+                }
+            }
+            catch
+            {
+                //var bed = from x in db.BookingBeds.Where(s => s.DateEnd <= date && (s.DateStart >= t2)) group x by x.BedId;
+
+                //allbeds =bed;
+
+            }
+
+            return allBeds;
+
+        }
+
+
+
+
+        public ActionResult DateFilter(string DateStart, string DateEnd)
+        {
+            List<AllBeds> getBeds = getAllBeds(DateStart, DateEnd);
+
+
+            return PartialView("_filteredDates", getBeds);
         }
 
         // GET: Hostels/Details/5
@@ -94,7 +143,7 @@ namespace HostelPro.Controllers
         public ActionResult Create()
         {
             HotelRoomBed hostel = new HotelRoomBed();
-         
+
             ViewBag.ZIP = new SelectList(db.Cities, "ZIP", "CITY1");
             return View(hostel);
         }
@@ -104,17 +153,17 @@ namespace HostelPro.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Create(HotelRoomBed HotelRoomBed,FormCollection collection)
+        public ActionResult Create(HotelRoomBed HotelRoomBed, FormCollection collection)
         {
             if (ModelState.IsValid)
             {
                 db.Hostels.Add(HotelRoomBed.Hostel);
                 Room room;
                 BED b;
-               
+
                 var bedNumber = collection["bedInput"];
                 var pricePrBed = collection["Price"];
-                int[] rooms=null;
+                int[] rooms = null;
                 int[] price = null;
                 try
                 {
@@ -127,16 +176,16 @@ namespace HostelPro.Controllers
                 }
                 if (rooms != null)
                 {
-                    int index=0;
+                    int index = 0;
                     foreach (int roomNumber in rooms)
                     {
                         ++index;
-                
+
                         room = new Room();
-                        int bedPrice=0;
+                        int bedPrice = 0;
                         if (price != null)
                         {
-                            bedPrice = price[index-1];
+                            bedPrice = price[index - 1];
 
                         }
                         for (int i = 0; i < roomNumber; i++)
@@ -151,7 +200,7 @@ namespace HostelPro.Controllers
                         db.Hostels.Add(HotelRoomBed.Hostel);
                         room.Hostel = HotelRoomBed.Hostel;
                         db.Rooms.Add(room);
-                      
+
                     }
 
 
@@ -163,9 +212,9 @@ namespace HostelPro.Controllers
 
 
                 }
-                
+
                 db.SaveChanges();
-                return RedirectToAction("Index","Admin");
+                return RedirectToAction("Index", "Admin");
             }
 
             ViewBag.ZIP = new SelectList(db.Cities, "ZIP", "CITY1", HotelRoomBed.Hostel.ZIP);
@@ -239,28 +288,28 @@ namespace HostelPro.Controllers
             }
             base.Dispose(disposing);
         }
-                [HttpPost]
-        public JsonResult City(HotelRoomBed  CityView)
+        [HttpPost]
+        public JsonResult City(HotelRoomBed CityView)
         {
-                   
+
             if (this.Request.IsAjaxRequest())
             {
-             if (ModelState.IsValid)
-             {
-                 db.Cities.Add(CityView.City);
-                 db.SaveChanges();
-                 MasterData newDb=new MasterData();
-                 return Json(newDb.Cities,JsonRequestBehavior.AllowGet);
-             }
-              
+                if (ModelState.IsValid)
+                {
+                    db.Cities.Add(CityView.City);
+                    db.SaveChanges();
+                    MasterData newDb = new MasterData();
+                    return Json(newDb.Cities, JsonRequestBehavior.AllowGet);
+                }
+
             }
-                return Json(db.Cities, JsonRequestBehavior.AllowGet);
-        }
-        
-          
+            return Json(db.Cities, JsonRequestBehavior.AllowGet);
         }
 
 
+    }
 
-    
+
+
+
 }

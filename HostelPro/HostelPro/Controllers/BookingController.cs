@@ -45,10 +45,10 @@ namespace HostelPro.Controllers
             {
                 var book = db.Database.ExecuteSqlCommand("createBooking @CustomerId={0}, @CusName={1}, @Phone={2}, @Email={3},@Hash={4},@Salt={5},@RoomId={6},@DateStart={7},@DateEnd={8},@TotalSum={9},@Numberofbeds={10}", CustomerId, CusName, Phone, Email, Hash, Salt, RoomId, DateStart, DateEnd, TotalSum, Numberofbeds);
 //                var book = db.Database.ExecuteSqlCommand("createBooking @CustomerId={0}, @CusName={1}, @Phone={2}, @Email={3},@Hash={4},@Salt={5},@BedId={6},@RoomId={7},@DateStart={8},@DateEnd={9},@TotalSum={10},@Numberofbeds={11}", CustomerId, CusName, Phone, Email, Hash, Salt, BedId, RoomId, DateStart, DateEnd, TotalSum, Numberofbeds);
-                return View("Thank_You");
+             return   RedirectToAction ("Thank_You");
             }
             catch {
-                return View("Error");
+                return RedirectToAction("Error");
             }
         }
     }

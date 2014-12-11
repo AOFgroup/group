@@ -35,7 +35,7 @@ namespace HostelPro.Controllers
             string Email = hv.CUS.Email.ToString();
             string Hash = hv.CUS.Hash.ToString();
             string Salt = hv.CUS.Salt.ToString();
-            string BedId = hv.BookingBed.BedId.ToString();
+           // string BedId = hv.BookingBed.BedId.ToString();
             string RoomId = hv.bed1.RoomId.ToString();
             string DateStart = hv.BookingBed.DateStart.ToString();
             string DateEnd = hv.BookingBed.DateEnd.ToString();
@@ -43,7 +43,8 @@ namespace HostelPro.Controllers
             string Numberofbeds = hv.BookingBed.Amount.ToString();
             try
             {
-                var book = db.Database.ExecuteSqlCommand("createBooking @CustomerId={0}, @CusName={1}, @Phone={2}, @Email={3},@Hash={4},@Salt={5},@BedId={6},@RoomId={7},@DateStart={8},@DateEnd={9},@TotalSum={10},@Numberofbeds={11}", CustomerId, CusName, Phone, Email, Hash, Salt, BedId, RoomId, DateStart, DateEnd, TotalSum, Numberofbeds);
+                var book = db.Database.ExecuteSqlCommand("createBooking @CustomerId={0}, @CusName={1}, @Phone={2}, @Email={3},@Hash={4},@Salt={5},@RoomId={6},@DateStart={7},@DateEnd={8},@TotalSum={9},@Numberofbeds={10}", CustomerId, CusName, Phone, Email, Hash, Salt, RoomId, DateStart, DateEnd, TotalSum, Numberofbeds);
+//                var book = db.Database.ExecuteSqlCommand("createBooking @CustomerId={0}, @CusName={1}, @Phone={2}, @Email={3},@Hash={4},@Salt={5},@BedId={6},@RoomId={7},@DateStart={8},@DateEnd={9},@TotalSum={10},@Numberofbeds={11}", CustomerId, CusName, Phone, Email, Hash, Salt, BedId, RoomId, DateStart, DateEnd, TotalSum, Numberofbeds);
                 return View("Thank_You");
             }
             catch {

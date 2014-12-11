@@ -28,20 +28,9 @@ namespace HostelPro.Controllers
             DateTime start = DateTime.Now;
             DateTime end = start.AddDays(1);
             List<AllBeds> getBeds = getAllBeds(start.ToShortDateString(), end.ToShortDateString());
-            List<AllBeds> uniq = new List<AllBeds>();
+          
 
-            foreach (AllBeds bed in getBeds)
-            {
-
-
-
-                if (uniq.IndexOf(bed) == -1)
-                {
-                    uniq.Add(bed);
-                }
-            }
-
-            return View(uniq);
+            return View(getBeds);
 
         }
         public ActionResult Date()

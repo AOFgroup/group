@@ -18,8 +18,8 @@
                         <p class="ci-lo">@city.First().City</p>
                         <p>@countBed beds</p>
                         @Html.HiddenFor(m => m.First().RoomId, roomId)
-                        @Html.HiddenFor(m=>m.First().DateStart,Model.Select(m=>m.DateStart).First())
-                        @Html.HiddenFor(m => m.First().DateEnd, Model.Select(m => m.DateEnd).First())
+                        @Html.HiddenFor(m => m.First().DateStart, Model.Select(m => m.DateEnd).First())
+                        @Html.HiddenFor(m => m.First().DateEnd, Model.Select(m => m.DateStart).First())
                     </a>
 
                 </li>
@@ -28,6 +28,12 @@
     }
 
 </ul>
+
+
+
+
+
+
 
 
 

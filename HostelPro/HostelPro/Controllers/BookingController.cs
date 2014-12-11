@@ -22,14 +22,16 @@ namespace HostelPro.Controllers
         
         public ActionResult Index(AllBeds allbeds)
         {
-            if (allbeds.DateEnd==null)
+            if (allbeds.DateStart==null)
             {
                 allbeds.DateStart = DateTime.Now;
                
             }
-            else if (allbeds.DateEnd==null)
+            if (allbeds.DateEnd==null)
             {
-                allbeds.DateEnd = DateTime.Now.AddDays(1);
+                DateTime start = DateTime.Now;
+                DateTime end = start.AddDays(1);
+                allbeds.DateEnd = end;
             }
             HostelView hw = new HostelView();
             hw.room1 = db.Rooms.Where(r => r.ID == allbeds.RoomId).First();

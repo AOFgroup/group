@@ -61,6 +61,7 @@
     {
 
         $('.view-body').replaceWith(data)
+        $('.item-con').bind("click", bed.submitForm);
     }
 
 

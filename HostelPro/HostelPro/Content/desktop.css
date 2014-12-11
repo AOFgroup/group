@@ -1,6 +1,11 @@
 ﻿/* desktop css*/
 
+/* google mal css */
 
+ #map-canvas {
+        width: 390px;
+        height: 400px;
+      }
 
 /* ==========================================================================
    error page

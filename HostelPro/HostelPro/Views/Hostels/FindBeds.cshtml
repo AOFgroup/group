@@ -21,35 +21,34 @@
         </li>
  
     </ul>
-    @using(Html.BeginForm("index", "booking", FormMethod.Post)){
     <ul class="view-body">
         @foreach (var hostel in Model.Select(s => s.Hostel).Distinct())
         {
             var price = Model.Where(s => s.Hostel == hostel).Min(s => s.Price);
             var countBed = Model.Where(s => s.Hostel == hostel).Select(s => s.BedId).Count();
-            var roomId=Model.Where(s=>s.Hostel==hostel).Select(r=>r.RoomId).Min();
+            var roomId = Model.Where(s => s.Hostel == hostel).Select(r => r.RoomId).Min();
             var city = Model.Where(m => m.Hostel == hostel);
             if (price != null)
             {
-                <li data-city-name="">
-                    <a class="item-con">
-                        <h5>@hostel</h5>
-                        <p class="pr-li">From @price dk</p>
-                       
+                using (Html.BeginForm("index", "booking", FormMethod.Get))
+                {
+                    <li data-city-name="">
+                        <a class="item-con">
+                            <h5>@hostel</h5>
+                            <p class="pr-li">From @price dk</p>
+                            <p class="ci-lo">@city.First().City</p>
+                            <p>@countBed beds</p>
+                            @Html.HiddenFor(m => m.First().RoomId, roomId)
+                            @Html.HiddenFor(m => m.First().DateStart, Model.Select(m => m.DateStart).First())
+                            @Html.HiddenFor(m => m.First().DateEnd, Model.Select(m => m.DateEnd).First())
+                        </a>
 
-                
-                <p class="ci-lo">@city.First().City</p>
-                            <p>@countBed</p>
-                        @Html.HiddenFor(m => m.First().RoomId,roomId );
-                           
-                    </a>
-                </li>
+                    </li>
+                }
             }
         }
-        
+
     </ul>
-        <input type="submit" class="btn btn-default"/>
-    }
 
 
 

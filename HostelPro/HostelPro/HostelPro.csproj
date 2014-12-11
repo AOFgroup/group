@@ -141,6 +141,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HostelsController.cs" />
@@ -169,9 +170,14 @@
     <Compile Include="ModelView\BedFilter.cs" />
     <Compile Include="ModelView\HostelView.cs" />
     <Compile Include="ModelView\HotelRoomBed.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\HostelPro.dll" />
+    <Content Include="bin\HostelPro.pdb" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\kendo\2014.2.1008\Black\editor.png" />
@@ -407,6 +413,7 @@
     <Content Include="image\Star-Background-7.jpg" />
     <Content Include="Scripts\app\admin.js" />
     <Content Include="Scripts\app\date.js" />
+    <Content Include="Scripts\app\filter.js" />
     <Content Include="Scripts\app\findbed.js" />
     <Content Include="Scripts\app\Hostel.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -419,6 +426,7 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\google-map-api.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -732,6 +740,10 @@
     <Content Include="Views\Hostels\_Date.cshtml" />
     <Content Include="Views\Hostels\_City.cshtml" />
     <Content Include="Views\Hostels\_filteredDates.cshtml" />
+    <Content Include="Views\Booking\Error.cshtml" />
+    <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\Booking\Thank_You.cshtml" />
+    <Content Include="Views\Booking\_HostelInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

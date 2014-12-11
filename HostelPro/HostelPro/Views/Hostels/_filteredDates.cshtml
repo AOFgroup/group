@@ -17,7 +17,6 @@
                         <p class="pr-li">From @price dk</p>
                         <p class="ci-lo">@city.First().City</p>
                         <p>@countBed beds</p>
-                        <input type="submit" class="btn btn-default" />
                         @Html.HiddenFor(m => m.First().RoomId, roomId)
                         @Html.HiddenFor(m=>m.First().DateStart,Model.Select(m=>m.DateStart).First())
                         @Html.HiddenFor(m => m.First().DateEnd, Model.Select(m => m.DateEnd).First())

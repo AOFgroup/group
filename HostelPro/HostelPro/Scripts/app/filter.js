@@ -21,14 +21,14 @@
 
     function city()
     {
-        var hostels = $('.view-body li');
+        var hostels = $('.view-body form');
         var city = $('#cityName').val();
         console.log(city)
         $.each(hostels, function () {
 
-            if ($(this).children().children().last().text() != city) {
+            if ($(this).find('a').children().eq(2).text() != city) {
                 $(this).hide();
-
+                console.log($(this).find('a').children().eq(0).text())
             }
             else
             {
@@ -40,7 +40,7 @@
             }
            
         });
-        console.log(city);
+       
         //$.ajax({
         //    url: "CityFilter",
         //    data: {

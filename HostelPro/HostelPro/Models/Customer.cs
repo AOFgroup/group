@@ -15,25 +15,18 @@ namespace HostelPro.Models
         {
             Bookings = new HashSet<Booking>();
         }
-
         public int ID { get; set; }
-
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-
+        [Required, DataType(DataType.PhoneNumber)]
         public int Phone { get; set; }
-
-        [Required]
+        [Required, DataType(DataType.EmailAddress)]
         [StringLength(255)]
         public string Email { get; set; }
-
-        [Required]
-        [StringLength(255)]
+        [Required, DataType(DataType.Password)]
         public string Hash { get; set; }
-
-        [Required]
-        [StringLength(255)]
+        [Required, Compare("Hash")]
         public string Salt { get; set; }
 
         public int? HostelRoleId { get; set; }
@@ -41,7 +34,7 @@ namespace HostelPro.Models
         public virtual ICollection<Booking> Bookings { get; set; }
 
         public virtual HostelRole HostelRole { get; set; }
-       
+
         public string HashPassword(string password)
         {
             var saltedPass = string.Concat(password, Salt);

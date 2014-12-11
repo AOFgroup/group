@@ -61,24 +61,24 @@
     </div>
     <div class="tab" id="Customer">
         <h4>Customers</h4>
-        @(Html.Kendo().Grid(Model.customer).Name("grd2-c").Columns(col => {
+        @*@(Html.Kendo().Grid(Model.customer).Name("grd2-c").Columns(col => {
         col.Bound(c=>c.Name);
         col.Bound(c => c.Email);
         col.Bound(c => c.Phone);
         col.Bound(c => c.HostelRole.Name).Title("Role");
         col.Bound(c => c.Bookings);
 
-    }).Pageable().Sortable().Filterable())
+    }).Pageable().Sortable().Filterable())*@
     </div>
     <div class="tab" id="Booking">
         <h4>Bookings</h4>
-        @(Html.Kendo().Grid(Model.booking).Name("grd2-b").Columns(col => {
+        @*@(Html.Kendo().Grid(Model.booking).Name("grd2-b").Columns(col => {
         col.Bound(c => c.Customer.Name);
         col.Bound(c => c.BookingDate);
-        col.Bound(c => c.BookingBeds);
+        col.Bound(c => c.);
         col.Bound(c => c.TotalSum);
 
-    }).Pageable().Sortable().Filterable())
+    }).Pageable().Sortable().Filterable())*@
     </div>
 
 

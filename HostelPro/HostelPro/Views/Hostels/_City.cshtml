@@ -1,1 +1,11 @@
-﻿
+﻿@model IEnumerable<HostelPro.Models.City>
+           <div>
+               @(Html.DropDownListFor(m => m.First().CITY1, new SelectList(Model.Select(s => s.CITY1)), "All Cities", new { @class = "btn btn-default", id="cityName" }))
+           </div>
+<br />
+<div>
+    <input type="submit" class="btn btn-success" id="ci-btn" />
+
+</div>
+
+<script src="~/Scripts/app/filter.js"></script>

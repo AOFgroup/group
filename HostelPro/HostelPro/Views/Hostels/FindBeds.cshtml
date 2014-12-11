@@ -1,83 +1,68 @@
 ﻿@using HostelPro.Models
-@model HostelPro.ModelView.BedFilter
+@model List<HostelPro.ModelView.AllBeds>
 @{
     ViewBag.Title = "FindBeds";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container box11">
-    <div class="row">
+<div class="app-content">
+    <ul class="app-filter">
+        <li>
+            <a class="li-a"><span class="glyphicon glyphicon-flag"></span><br />City</a>
+        </li>
+        <li>
+            <a class="li-a"><span class="glyphicon glyphicon-list-alt"></span><br />Date</a>
+        </li>
+        <li>
+            <a class="li-a"><span class="glyphicon glyphicon-user"></span><br />People</a>
+        </li>
+        <li>
+            <a class="li-a"><span class="glyphicon glyphicon-euro "></span><br />Price</a>
+        </li>
+ 
+    </ul>
+    @using(Html.BeginForm("index", "booking", FormMethod.Post)){
+    <ul class="view-body">
+        @foreach (var hostel in Model.Select(s => s.Hostel).Distinct())
+        {
+            var price = Model.Where(s => s.Hostel == hostel).Min(s => s.Price);
+            var countBed = Model.Where(s => s.Hostel == hostel).Select(s => s.BedId).Count();
+            var roomId=Model.Where(s=>s.Hostel==hostel).Select(r=>r.RoomId).Min();
+            var city = Model.Where(m => m.Hostel == hostel);
+            if (price != null)
+            {
+                <li data-city-name="">
+                    <a class="item-con">
+                        <h5>@hostel</h5>
+                        <p class="pr-li">From @price dk</p>
+                       
 
-        <div class="col-md-8 col-sm-8 col-xs-12">
-
-
-            <div class="app-content">
-                <ul class="app-filter">
-                    <li>
-                        <a class="li-a"><span class="glyphicon glyphicon-flag"></span><br />City</a>
-                    </li>
-                    <li>
-                        <a class="li-a"><span class="glyphicon glyphicon-list-alt"></span><br />Date</a>
-                    </li>
-                    <li>
-                        <a class="li-a"><span class="glyphicon glyphicon-user"></span><br />People</a>
-                    </li>
-                    <li>
-                        <a class="li-a"><span class="glyphicon glyphicon-euro "></span><br />Price</a>
-                    </li>
-
-                </ul>
-                <ul class="view-body">
-                    @foreach (Hostel hostel in Model.hostel)
-                    {
-                        var price = hostel.Roms.Min(s => s.BEDs.Min(r => r.Price));
-                        if (price != null)
-                        {
-                            <li>
-                                <a class="item-con">
-                                    <h5>@hostel.Name</h5>
-                                    <p>From @price dk</p>
-                                </a>
-                            </li>
-
-                        }
-
-
-
-                    }
-
-
-                </ul>
-
-
-            </div>
-
-
-            <div id="pop-up">
-
-
-            </div>
-
-
-        </div> <!-- end class="col-md-8 col-sm-8 col-xs-12">-->
+                
+                <p class="ci-lo">@city.First().City</p>
+                            <p>@countBed</p>
+                        @Html.HiddenFor(m => m.First().RoomId,roomId );
+                           
+                    </a>
+                </li>
+            }
+        }
+        
+    </ul>
+        <input type="submit" class="btn btn-default"/>
+    }
 
 
 
-        <!-- side bar below -->
-        <div id="sidebox" class="col-md-4  col-sm-4 box22 col-xs-12">
-            <h4>partial or widget</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam sunt quidem eaque placeat. Doloribus, harum. Quia nemo nobis ratione, culpa labore incidunt excepturi id voluptatum sed impedit veritatis dignissimos maiores!</p>
-
-        </div>
+   
 
 
+</div>
+<div id="pop-up">
 
-        </div> <!-- end row -->
-</div> <!-- end container -->
 
-
+</div>
 <script>
-
+    
 </script>
 
 <script src="~/Scripts/app/findbed.js"></script>

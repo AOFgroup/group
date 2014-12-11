@@ -9,10 +9,13 @@ namespace HostelPro.ModelView
     {
         public int RoomId { get; set; }
         public int  BedId { get; set; }
-        public string DateEnd { get; set; }
-        public string DateStart { get; set; }
+        public DateTime? DateEnd { get; set; }
+        public DateTime? DateStart { get; set; }
         public string Hostel { get; set; }
-        public int HostelId { get;set; }  
+        public int HostelId { get;set; }
+        public decimal Price { get; set; }
+        public string City { get; set; }
+        public int CountBed { get; set; }
         
     }
 }

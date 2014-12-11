@@ -25,31 +25,36 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.CUS.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.CUS.Name, new { htmlAttributes = new { @class = "form-control" } })               
+                    @Html.EditorFor(model => model.CUS.Name, new { htmlAttributes = new { @class = "form-control" } })  
+                    @Html.ValidationMessageFor(model => model.CUS.Name, "", new { @class = "text-danger" })             
                 </div>
            </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.CUS.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.CUS.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CUS.Phone, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.CUS.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.CUS.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CUS.Email, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.CUS.Hash, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.CUS.Hash, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CUS.Hash, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.CUS.Salt, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.CUS.Salt, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CUS.Salt, "", new { @class = "text-danger" })
                 </div>
             </div>
             @*<div class="form-group">
@@ -59,21 +64,21 @@
                 </div>
             </div>*@
             <div class="form-group">
-                @Html.LabelFor(model => model.bed1.RoomId, htmlAttributes: new { @class = "control-label col-md-2" })
+                @*@Html.LabelFor(model => model.bed1.RoomId, htmlAttributes: new { @class = "control-label col-md-2" })*@
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.bed1.RoomId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.HiddenFor(m=>m.room1.ID, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(model => model.BookingBed.DateStart, htmlAttributes: new { @class = "control-label col-md-2" })
+                @*@Html.LabelFor(model => model.BookingBed.DateStart, htmlAttributes: new { @class = "control-label col-md-2" })*@
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.BookingBed.DateStart, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.HiddenFor(model => model.BookingBed.DateStart, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(model => model.BookingBed.DateEnd, htmlAttributes: new { @class = "control-label col-md-2" })
+                @*@Html.LabelFor(model => model.BookingBed.DateEnd, htmlAttributes: new { @class = "control-label col-md-2" }*@)
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.BookingBed.DateEnd, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.HiddenFor(model => model.BookingBed.DateEnd, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
             </div>
             <div class="form-group">
@@ -89,7 +94,7 @@
                 </div>
             </div>
         </div>
-        @Html.ActionLink("Cancel","Index","Home")
-        <input type="submit" value="Book" />
+        @Html.ActionLink("cancel","Booking")
+        <input type="submit" value="book" />
     
     } @*end of the form*@

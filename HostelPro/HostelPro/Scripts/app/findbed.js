@@ -3,12 +3,18 @@
     function popup() {
         var partial = $(this).text();
       
-        
-            
+
+    }
+
+
+    function submitForm(callback)
+    {
+        $(this).parent().parent().submit();
 
     }
     return {
-        popup:popup
+        popup: popup,
+        submitForm:submitForm
     }
     
 
@@ -38,5 +44,6 @@ $(document).ready(function () {
     
 
     $(".li-a").click(openWindow);
+    $('.item-con').bind("click",bed.submitForm);
    
 });

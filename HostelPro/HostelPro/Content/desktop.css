@@ -2,6 +2,43 @@
 
 
 
+/* ==========================================================================
+   error page
+   ========================================================================== */
+
+
+.errorbox{
+	background-color: xaqua;
+	
+}
+.errorbox-widget{
+	background-color: xgreen;
+	margin-top: 0px;
+	xmargin-bottom: 27px;
+}
+
+.errortitle{
+	margin-top: 1.3em;
+
+}
+.error-p-text{
+	color:gray;
+	font-size: 1.3em;
+}
+.imgbox1{
+	margin:0 auto;
+
+}
+.img-thumbnail {
+	
+	height: auto;
+	max-width: 100%;
+	background-color: white;
+	border: 1px solid #dddddd;
+	border-radius: 0px;
+	margin-bottom: 5px;
+}
+
 /* bootstrap media queries */
 /**/
 

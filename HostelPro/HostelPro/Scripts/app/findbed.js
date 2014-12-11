@@ -10,7 +10,7 @@
     function submitForm(callback)
     {
         $(this).parent().parent().submit();
-        alert('hello')
+       
     }
     return {
         popup: popup,

@@ -16,19 +16,18 @@
 
         });
         $("#pop-up").data("kendoWindow").close();
-        console.log()
+     
     }
 
     function city()
     {
         var hostels = $('.view-body form');
         var city = $('#cityName').val();
-        console.log(city)
         $.each(hostels, function () {
 
             if ($(this).find('a').children().eq(2).text() != city) {
                 $(this).hide();
-                console.log($(this).find('a').children().eq(0).text())
+                
             }
             else
             {
@@ -41,19 +40,6 @@
            
         });
        
-        //$.ajax({
-        //    url: "CityFilter",
-        //    data: {
-        //        City: ,
-                
-
-        //    },
-        //    success: callback
-
-
-
-        //});
-
 
     }
     

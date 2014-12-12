@@ -37,6 +37,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -144,6 +145,7 @@
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HostelRolesController.cs" />
     <Compile Include="Controllers\HostelsController.cs" />
     <Compile Include="DataAccess\Login.cs" />
     <Compile Include="DataAccess\PasswordHasher.cs" />
@@ -177,6 +179,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\desktop.css" />
     <Content Include="Content\findbeds.css" />
+    <Content Include="image\jumboroom.jpg" />
     <Content Include="Content\kendo\2014.2.1008\Black\editor.png" />
     <Content Include="Content\kendo\2014.2.1008\Black\imagebrowser.png" />
     <Content Include="Content\kendo\2014.2.1008\Black\indeterminate.gif" />
@@ -393,6 +396,7 @@
     <Content Include="Content\kendo\2014.2.1008\Uniform\sprite.png" />
     <Content Include="Content\kendo\2014.2.1008\Uniform\sprite_2x.png" />
     <Content Include="Content\Site1.css" />
+    <Content Include="Content\toadd.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -577,12 +581,15 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -738,6 +745,11 @@
     <Content Include="Views\Hostels\Delete.cshtml" />
     <Content Include="Views\Hostels\Details.cshtml" />
     <Content Include="Views\Hostels\Edit.cshtml" />
+    <Content Include="Views\HostelRoles\Create.cshtml" />
+    <Content Include="Views\HostelRoles\Delete.cshtml" />
+    <Content Include="Views\HostelRoles\Details.cshtml" />
+    <Content Include="Views\HostelRoles\Edit.cshtml" />
+    <Content Include="Views\HostelRoles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

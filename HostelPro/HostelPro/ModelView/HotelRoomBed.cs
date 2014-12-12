@@ -11,13 +11,14 @@ namespace HostelPro.ModelView
         public Room Room { get; set; }
         public BED Bed { get; set; }
         public City City { get; set; }
-
+      
        public HotelRoomBed()
        {    
            Hostel = new Hostel();
            Room = new Room();
            Bed = new BED();
            City = new City();
+          
        }
 
 

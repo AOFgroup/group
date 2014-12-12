@@ -26,7 +26,7 @@ namespace HostelPro.Controllers
         {
             BedFilter BD = new BedFilter();
             DateTime start = DateTime.Now;
-            DateTime end = start.AddDays(1);
+            DateTime end = start.AddDays(2);
             List<AllBeds> getBeds = getAllBeds(start.ToShortDateString(), end.ToShortDateString());
           
 
@@ -132,8 +132,7 @@ namespace HostelPro.Controllers
         public ActionResult Create()
         {
             HotelRoomBed hostel = new HotelRoomBed();
-
-            ViewBag.ZIP = new SelectList(db.Cities, "ZIP", "CITY1");
+            ViewBag.ZIP = db.Cities; 
             return View(hostel);
         }
 
@@ -144,12 +143,11 @@ namespace HostelPro.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult Create(HotelRoomBed HotelRoomBed, FormCollection collection)
         {
-            if (ModelState.IsValid)
-            {
-                db.Hostels.Add(HotelRoomBed.Hostel);
+                 var zip = HotelRoomBed.City.ZIP;
+                 HotelRoomBed.Hostel.ZIP = zip;
+                //HotelRoomBed.Hostel.City.ZIP = HotelRoomBed.City.ZIP;
                 Room room;
                 BED b;
-
                 var bedNumber = collection["bedInput"];
                 var pricePrBed = collection["Price"];
                 int[] rooms = null;
@@ -165,6 +163,7 @@ namespace HostelPro.Controllers
                 }
                 if (rooms != null)
                 {
+                    db.Hostels.Add(HotelRoomBed.Hostel);
                     int index = 0;
                     foreach (int roomNumber in rooms)
                     {
@@ -186,7 +185,7 @@ namespace HostelPro.Controllers
                             room.BEDs.Add(b);
                             db.BEDs.Add(b);
                         }
-                        db.Hostels.Add(HotelRoomBed.Hostel);
+                       
                         room.Hostel = HotelRoomBed.Hostel;
                         db.Rooms.Add(room);
 
@@ -204,10 +203,7 @@ namespace HostelPro.Controllers
 
                 db.SaveChanges();
                 return RedirectToAction("Index", "Admin");
-            }
 
-            ViewBag.ZIP = new SelectList(db.Cities, "ZIP", "CITY1", HotelRoomBed.Hostel.ZIP);
-            return View(HotelRoomBed);
         }
 
         // GET: Hostels/Edit/5

@@ -8,13 +8,13 @@
 <div class="app-content">
     <ul class="app-filter">
         <li>
-            <a class="li-a"><span class="glyphicon glyphicon-flag"></span><br />City</a>
-        </li>
-        <li>
             <a class="li-a"><span class="glyphicon glyphicon-list-alt"></span><br />Date</a>
         </li>
         <li>
             <a class="li-a"><span class="glyphicon glyphicon-user"></span><br />People</a>
+        </li>
+        <li>
+            <a class="li-a"><span class="glyphicon glyphicon-flag"></span><br />City</a>
         </li>
         <li>
             <a class="li-a"><span class="glyphicon glyphicon-euro "></span><br />Price</a>
@@ -22,23 +22,27 @@
  
     </ul>
     <ul class="view-body">
+       
         @foreach (var hostel in Model.Select(s => s.Hostel).Distinct())
         {
             var price = Model.Where(s => s.Hostel == hostel).Min(s => s.Price);
             var countBed = Model.Where(s => s.Hostel == hostel).Select(s => s.BedId).Count();
-            var roomId = Model.Where(s => s.Hostel == hostel).Select(r => r.RoomId).Min();
+            var roomId = Model.Where(s=>s.Hostel==hostel).Select(r=>r.RoomId);
+            var id = roomId.First();
             var city = Model.Where(m => m.Hostel == hostel);
             if (price != null)
             {
                 using (Html.BeginForm("index", "booking", FormMethod.Get))
                 {
+                   <li><input type="hidden" name="people" class="bed-val" /></li> 
+            <li><input type="hidden" name="price" value="@price" /></li>
                     <li data-city-name="">
                         <a class="item-con">
                             <h5>@hostel</h5>
                             <p class="pr-li">From @price dk</p>
                             <p class="ci-lo">@city.First().City</p>
                             <p>@countBed beds</p>
-                            @Html.HiddenFor(m => m.First().RoomId, roomId)
+                            @Html.Hidden("RoomId", id)
                             @Html.HiddenFor(m => m.First().DateStart, Model.Select(m => m.DateEnd).First())
                             @Html.HiddenFor(m => m.First().DateEnd, Model.Select(m => m.DateStart).First())
                         </a>

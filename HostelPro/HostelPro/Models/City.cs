@@ -24,5 +24,7 @@ namespace HostelPro.Models
         public string CITY1 { get; set; }
 
         public virtual ICollection<Hostel> Hostels { get; set; }
+
+       
     }
 }

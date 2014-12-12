@@ -13,7 +13,7 @@ namespace HostelPro.Models
         {
             BookingBeds = new HashSet<BookingBed>();
         }
-
+        
         public int ID { get; set; }
 
         public int CustomerId { get; set; }

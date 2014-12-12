@@ -229,7 +229,7 @@ body {
 }
 .item-con {
         display: inline-block;
-        height: 6em;
+        min-height: 6em;
         width: 28%;
         background-color:	#dfe3ee;
         border: initial;
@@ -426,7 +426,7 @@ color:white;
 
     .item-con {
         display: inline-block;
-        height: 6em;
+       min-height: 6em;
         width: 28%;
         background-color:#6d84b4;
         border: initial;

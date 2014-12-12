@@ -1,5 +1,4 @@
-﻿
-    function duration()
+﻿function duration()
     {
         var from = $('#DateFrom').val()
         var to = $('#DateEnd').val()
@@ -11,9 +10,6 @@
 
             },
             success:callback
-
-
-
         });
         $("#pop-up").data("kendoWindow").close();
      
@@ -45,17 +41,22 @@
     
     function callback(data)
     {
-
-        $('.view-body').replaceWith(data)
+        var viewBody = $('.view-body form');
         $('.item-con').bind("click", bed.submitForm);
     }
+    function people()
+    {
+        $('.bed-val').val($('#in-fil').val());
+        $("#pop-up").data("kendoWindow").close();
+       
+    }
+
+    $(document).ready(function(){
 
 
-$(document).ready(function(){
-
-
-    $('#Fil-Date').click(duration);
-    $('#ci-btn').click(city);
+        $('#Fil-Date').click(duration);
+        $('#ci-btn').click(city);
+        $('#pe-fil').click(people);
 
 
 });

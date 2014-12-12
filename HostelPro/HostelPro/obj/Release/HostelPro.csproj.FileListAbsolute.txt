@@ -56,4 +56,3 @@ C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\uk-UA\Kendo.Mv
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\bin\zh-CN\Kendo.Mvc.resources.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\obj\Release\HostelPro.dll
 C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\obj\Release\HostelPro.pdb
-C:\Users\oleksandr\Documents\GitHub\group\HostelPro\HostelPro\obj\Release\HostelPro.csprojResolveAssemblyReference.cache

@@ -11,6 +11,7 @@ namespace HostelPro.Models
     [Table("Customer")]
     public partial class Customer
     {
+    
         public Customer()
         {
             Bookings = new HashSet<Booking>();
@@ -26,7 +27,7 @@ namespace HostelPro.Models
         public string Email { get; set; }
         [Required, DataType(DataType.Password)]
         public string Hash { get; set; }
-        [Required, Compare("Hash")]
+        [Required, Compare("Hash"),DataType(DataType.Password)]
         public string Salt { get; set; }
 
         public int? HostelRoleId { get; set; }
@@ -34,6 +35,7 @@ namespace HostelPro.Models
         public virtual ICollection<Booking> Bookings { get; set; }
 
         public virtual HostelRole HostelRole { get; set; }
+   
 
         public string HashPassword(string password)
         {

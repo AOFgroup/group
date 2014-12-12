@@ -37,7 +37,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -178,7 +178,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\desktop.css" />
+    <Content Include="Content\error.css" />
     <Content Include="Content\findbeds.css" />
+    <Content Include="Content\jumboroom.jpg" />
+    <Content Include="Content\text.txt" />
     <Content Include="image\jumboroom.jpg" />
     <Content Include="Content\kendo\2014.2.1008\Black\editor.png" />
     <Content Include="Content\kendo\2014.2.1008\Black\imagebrowser.png" />
@@ -422,6 +425,9 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\kendo\2014.2.1008\images\kendoui.ttf" />
     <Content Include="Content\kendo\2014.2.1008\images\kendoui.woff" />
+    <None Include="Properties\PublishProfiles\HostelPro %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\HostelPro - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\HostelPro - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\HostelPro.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\google-map-api.js" />
@@ -750,6 +756,8 @@
     <Content Include="Views\HostelRoles\Details.cshtml" />
     <Content Include="Views\HostelRoles\Edit.cshtml" />
     <Content Include="Views\HostelRoles\Index.cshtml" />
+    <Content Include="Views\Hostels\_people.cshtml" />
+    <Content Include="Views\Hostels\_price.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -20,5 +20,7 @@ namespace HostelPro.Models
         public int RoomNumber { get; set; }
         public virtual ICollection<BED> BEDs { get; set; }
         public virtual Hostel Hostel { get; set; }
+
+      
     }
 }

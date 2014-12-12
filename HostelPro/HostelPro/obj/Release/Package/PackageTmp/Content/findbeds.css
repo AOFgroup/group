@@ -1,4 +1,4 @@
-﻿/* bootstrap media queries */
+/* bootstrap media queries */
 /*
 
 
@@ -126,36 +126,40 @@ width: 22%;
 
 @media screen and (max-width: 768px){
 
-.box22{
-	margin-top: 5em;
-	margin-bottom: 1em;
-	xbackground-color: aqua;
-	clear: both;
-}
+        body{
+        margin-top: 20px;
+      }
 
-#sidebox{
-	xdisplay: none;
-	margin-top: 2em;
-	position: relative;
-	top:1em;
-}
+      .box22{
+      	margin-top: 5em;
+      	margin-bottom: 1em;
+      	xbackground-color: aqua;
+      	clear: both;
+      }
 
-.app-content{
-	width: 100%;
-	xbackground-color: green;
-}
-.app-filter{
-	width: 100%;
-	xbackground-color: orange;
-}
+      #sidebox{
+      	xdisplay: none;
+      	margin-top: 2em;
+      	position: relative;
+      	top:1em;
+      }
+
+      .app-content{
+      	width: 100%;
+      	xbackground-color: green;
+      }
+      .app-filter{
+      	width: 100%;
+      	xbackground-color: orange;
+      }
 
 
 
-.app-content .app-filter li a {
-	
-	width: 20%;
-	height: auto;
-}
+      .app-content .app-filter li a {
+      	
+      	width: 20%;
+      	height: auto;
+      }
 
 
 

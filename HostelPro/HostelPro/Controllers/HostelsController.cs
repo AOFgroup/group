@@ -46,7 +46,13 @@ namespace HostelPro.Controllers
 
             return PartialView("_City", city);
         }
+        public ActionResult People()
+        {
 
+
+
+            return PartialView("_people");
+        }
 
 
         public List<AllBeds> getAllBeds(string DateStart, string DateEnd)

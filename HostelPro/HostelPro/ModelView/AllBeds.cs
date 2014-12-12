@@ -16,6 +16,7 @@ namespace HostelPro.ModelView
         public decimal Price { get; set; }
         public string City { get; set; }
         public int CountBed { get; set; }
+        public int NumberOfBeds { get; set; }
         
     }
 }

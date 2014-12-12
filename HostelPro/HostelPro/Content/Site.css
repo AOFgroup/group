@@ -1,4 +1,12 @@
-﻿/*For ipads or big screens some exapmle*/
+/*
+*changes goes here
+*
+*/
+body{
+  margin-top: 50px;
+}
+
+/*For ipads or big screens*/
 
 #products
 {
@@ -44,8 +52,10 @@ textarea {
 .navbar-fixed-top{
 
     background-color:black;
-    opacity:0.5;
+    opacity:1;
 }
+
+
 #mobile-button1,#mobile-button2
 {
  background-color:#dfe3ee;
@@ -69,8 +79,7 @@ margin-right:10%;
 
 
 
-
-#mobile-button3,#mobile-button0
+#mobile-button3, #mobile-button0
 {
  background-color:lightgray;
  color:white;
@@ -113,15 +122,23 @@ margin-right:10%;
     background-color:black;
     opacity:0.7;
 }
-.navigation-menu ul li,a 
+.navigation-menu ul a 
 {
     list-style:none;
     color:white;
     text-decoration:none;
     font-family:sans-serif;
     font-size:large;
-    margin-top:5%;
+    margin-top:20%;
+    margin-left:10%;
 
+}
+.navigation-menu ul
+{
+    
+    margin-top:20%;
+    margin-left:-10%;
+    clear:both;
 }
 a:hover{
 
@@ -211,7 +228,7 @@ body {
 }
 .item-con {
         display: inline-block;
-        height: 6em;
+        min-height: 6em;
         width: 28%;
         background-color:	#dfe3ee;
         border: initial;
@@ -232,18 +249,30 @@ body {
      border:initial;
      background-color:#8b9dc3;
     text-align:center;
-    padding-top:2%;
+    padding-top:0%;
     font-size:small;
      margin:2%;
     margin-top:6%;
+    text-overflow: ellipsis;
+    white-space   : nowrap;
+    overflow      : hidden;
 
    
   
  
   }
+
+.hidetext{
+    text-overflow: ellipsis;
+    white-space   : nowrap;
+    overflow      : hidden;
+
+}
+
+
  ul li
  {
-     display:inline;
+     /*display:inline;*/
      
      list-style:none;
 
@@ -265,187 +294,141 @@ color:white;
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width: 768px) 
-{
-    #mobile-button0 {
-        position: relative;
-        margin-top: 4em;
-        margin-left: -1%;
-        height: 10em;
-        content: url('../image/sleep.jpg');
+ .li-a {
+     height:5em;
+    
     }
 
-#mobile-button1,#mobile-button2
-{
-  height:4em;
-  padding-top:20px;
-  
-}
-#mobile-button2
-{
-background-color:red;
-opacity:0.7;
-color:white;
-font-size:large;
-font-weight:600;
-}
-#mobile-button1
-{
-background-color:#3b5998;
-opacity:0.7;
-color:white;
-font-size:large;
-font-weight:600;
+
+@media only screen and (max-width: 768px) {
+
+    #mobile-button0 {
+        position: relative;
+        margin-top: 1em;
+        margin-left: -1%;
+        height: 10em;
+        content: url('../image/jumboroom.jpg');
+    }
 
 
-}
-
-#book
-{
- display:block;
- background-color:#3b5998;
- color:white;
- height:2em;
- width:20%;
- float:left;
- margin-left:8%;
- margin-top:4%;
- margin-bottom:3%;
- text-decoration:none;
- visibility:visible;
- float:left;
- text-align: center; 
- font-family:sans-serif;
- font-size:smaller;
-
-}
-#Offer
-{
- padding-top:20px;
- display:block;
- text-align:right;
- background-color:transparent;
- color:white;
- height:5em;
- width:70%;
- float:left;
- margin-right:0%;
- margin-top:5%;
- margin-bottom:3%;
- text-decoration:none;
- visibility:visible;
- float:left;
- text-align: center;
- font-family:sans-serif;
- font-size:small;
-}
-
-#button-view
-{
-
-    height:20em;
-
-}
-footer
-{
-
-    display:none;
-}
-#Home
-{
- height:3em;
- width:100%;;
- visibility:visible;
- float:left;
- color:white;
- background-color:black;
- margin-left:0%;
- opacity:0.5;
- text-align:center;
- padding-top:4%;
- 
 
 
-}
-.navbar-header
-{
-    background-color: #afbdd4;
 
-}
-.navbar-toggle
-{
-    background-color:black;
-}
 
-.head-col
-{
-     
+      #mobile-button1,#mobile-button2{
+        height:4em;
+        padding-top:20px;
+        
+      }
+
+
+    #mobile-button2{
+    background-color:red;
+    opacity:1;
+    color:white;
+    font-size:large;
+    font-weight:600;
+    }
+
+
+      #mobile-button1  {
+      background-color:#3b5998;
+      opacity:1;
       color:white;
-      font-size:x-large;
-      margin-left:28%; 
+      font-size:large;
+      font-weight:600;
+      }
 
-}
-.navbar-collapse in
-{
-    background-color:#A7B7E4;
-    border-bottom-color:none;
+      #book{
+       display:block;
+       background-color:#3b5998;
+       color:white;
+       height:2em;
+       width:20%;
+       float:left;
+       margin-left:8%;
+       margin-top:4%;
+       margin-bottom:3%;
+       text-decoration:none;
+       visibility:visible;
+       float:left;
+       text-align: center; 
+       font-family:sans-serif;
+       font-size:smaller;
 
-}/*CheckBedPage*/
- .app-content{
-   margin-top:30%;
-   float:left;
- }
-.app-content{
-  
-   margin-left:-6%;
-   clear:both;
-}
- .app-content .app-filter li
- {
-     display:inline;
-   
+      }
+
+      #Offer{
+       padding-top:20px;
+       display:block;
+       text-align:right;
+       background-color:transparent;
+       color:grey;
+       height:5em;
+       width:70%;
+       float:left;
+       margin-right:0%;
+       margin-top:5%;
+       margin-bottom:3%;
+       text-decoration:none;
+       visibility:visible;
+       float:left;
+       text-align: center;
+       font-family:sans-serif;
+       font-size:small;
+      }
+
+        #button-view{
+
+            height:20em;
+
+        }
+        footer{
+
+            display:none;
+        }
+
+      #Home{
+        margin-top: 1em;
+       height:3em;
+       width:100%;;
+       visibility:visible;
+       float:left;
+       color:white;
+       background-color:black;
+       margin-left:0%;
+       opacity:1;
+       text-align:center;
+       padding-top:2%;
+      }
+
+
+      .navbar-header {
+          background-color: #afbdd4;
+
+      }
+      .navbar-toggle {
+          background-color:black;
+      }
+
+      .head-col {
+           
+            color:white;
+            font-size:x-large;
+            margin-left:28%; 
+
+      }
      
-    
- }
- span
- {
-margin-top:3%;
+      .navbar-collapse {
+          background-color:#A7B7E4;
+          border-bottom-color:none;
 
- }
- .app-content .app-filter li a{
-    display:inline-block;
-     height:3.5em;
-     width:4.5em;
-     color:white;
-     border:initial;
-     background-color:#3b5998;
-    text-align:center;
-    padding-top:2%;
-    font-size:small;
-   margin:0%;
-    margin-top:3%;
- 
-  }
+      }     
 
-.glyphicon{
 
-    margin-left:4%;
-
-}
-    .item-con {
+    .item-con .li-a{
         display: inline-block;
-        height: 6em;
+       min-height: 6em;
         width: 28%;
         background-color:#6d84b4;
         border: initial;
@@ -455,35 +438,61 @@ margin-top:3%;
         margin: 1%;
         font-size: small;
     }
-.view-body
-{
-  margin-top:14%;
-  
-  width:auto;
-}
-.view-body p
-{
-background-color:red;
-color:white;
-}
-.view-body h5
-{
-
- padding-top:1px;
- font-family:sans-serif;
- color:white;
-
-}
-.view-body li
-{
-    display:inline;
-    text-decoration:none;
+    .li-a {
+     height:5em;
     
-}
- /*icons*/
-    body {
-        background-image: url('../image/Star-Background-7.jpg');
     }
+        .view-body{
+          xmargin-top:14%;   /****** conflicts all !!!  
+          *
+          *
+          *
+          *
+          *
+          *
+          *
+          *****************/
+          
+          width:auto;
+        }
+
+      .view-body p {
+      background-color:red;
+      color:white;
+      }
+      .view-body h5 {
+
+       padding-top:1px;
+       font-family:sans-serif;
+       color:white;
+
+      }
+      .view-body li
+      {
+          display:inline;
+          text-decoration:none;
+          
+      }
+     /*icons*/
+        body {
+            xbackground-image: url('../image/Star-Background-7.jpg');
+        }
 
 
-	}
+	} /* end @media only screen and (max-width: 768px)*/
+
+
+
+/* ==========================================================================
+   menu bar color header
+   ========================================================================== */
+
+
+@media only screen and (max-width: 768px){
+
+    .navbar-header {
+      background-color: #334A6F;
+      }
+
+}
+  

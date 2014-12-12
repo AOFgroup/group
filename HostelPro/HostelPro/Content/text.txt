@@ -1,0 +1,31 @@
+
+ copy all these files  in the content folder 
+
+ now in the bundling of the project App_start/
+
+ inside of the file BundleConfig.cs  add link these files from the content folder and 
+ add them in this ORDER Please, otherwise they will overwrite theirselves.
+
+   bundles.Add(new StyleBundle("~/content/css").Include(
+                      "~/content/bootstrap.css",
+                      "~/content/Site.css", 
+                      "~/content/desktop.css",
+                      "~/content/findbeds.css",
+                      "~/content/error.css"));
+        }
+
+
++ add this file to the  [ image folder  ]
+
+
+   #-----> add this class[  boxeffect effect1   ]
+
+    to the 	#mobilebutton1 & #mobilebutton2
+
+----- and they should work ok because the css are all ready connected 
+
+(in case this new image does not show, )
+
+
+
+

@@ -23,5 +23,6 @@ namespace HostelPro.Models
 
         public virtual Booking Booking { get; set; }
         public virtual BED Bed { get; set; }
+
     }
 }

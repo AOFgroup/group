@@ -41,6 +41,7 @@ namespace HostelPro.Models
 
         public virtual ICollection<Image> Images { get; set; }
 
+      
         
     }
 }

@@ -23,11 +23,13 @@ namespace HostelPro
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
            
-            bundles.Add(new StyleBundle("~/content/css").Include(
+              bundles.Add(new StyleBundle("~/content/css").Include(
                       "~/content/bootstrap.css",
-                      "~/content/Site1.css",
+                      "~/content/Site.css", 
                       "~/content/desktop.css",
-                      "~/content/findbeds.css"));
+                      "~/content/findbeds.css",
+                      "~/content/error.css"));
+        
         }
     }
 }

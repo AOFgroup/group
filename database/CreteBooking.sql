@@ -35,7 +35,7 @@ END
 IF @AVAILIBLE=1
 BEGIN
  /*Check the last bedid*/
- INSERT INTO Booking (CustomerId,TotalSum) values  (@CustomerId,200)
+ INSERT INTO Booking (CustomerId,TotalSum,BookingDate) values  (@CustomerId,200,getdate())
 select @BookingId=SCOPE_IDENTITY()
 exec LastID @DateStart,@DateEnd,@RoomId,@FirstBedId OUTPUT
 PRINT @AVAILIBLE

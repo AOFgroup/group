@@ -42,6 +42,7 @@
     function callback(data)
     {
         var viewBody = $('.view-body form');
+        $('.view-body').replaceWith(data)
         $('.item-con').bind("click", bed.submitForm);
     }
     function people()

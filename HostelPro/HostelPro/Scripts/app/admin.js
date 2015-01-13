@@ -21,6 +21,7 @@
 
 
 })();
+
 (function () {
     $("#Hostel").show();
     $("[data-tab]").on("click", state.activeTab)

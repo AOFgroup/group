@@ -25,9 +25,10 @@ namespace HostelPro.Models
         [Required, DataType(DataType.EmailAddress)]
         [StringLength(255)]
         public string Email { get; set; }
-        [Required, DataType(DataType.Password)]
+        [Required(ErrorMessage = "Password"), DataType(DataType.Password)]
+
         public string Hash { get; set; }
-        [Required, Compare("Hash"),DataType(DataType.Password)]
+        [Required(ErrorMessage = "Comfirm Password"), Compare("Hash"), DataType(DataType.Password)]
         public string Salt { get; set; }
 
         public int? HostelRoleId { get; set; }

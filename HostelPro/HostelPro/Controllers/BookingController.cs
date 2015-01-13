@@ -22,6 +22,8 @@ namespace HostelPro.Controllers
         
         public ActionResult Index(AllBeds allbeds,string people,string price)
         {
+            int am=1;
+            int pr = 0;
             if (allbeds.DateStart==null)
             {
                 allbeds.DateStart = DateTime.Now;
@@ -34,8 +36,14 @@ namespace HostelPro.Controllers
                 DateTime end = start.AddDays(1);
                 allbeds.DateEnd = end;
             }
-            int am = Convert.ToInt32(people);
-            int pr = Convert.ToInt32(price);
+
+            if (people!="" && price!="")
+            {
+               am = Convert.ToInt32(people);
+               pr = Convert.ToInt32(price);
+            }
+            
+           
             HostelView hw = new HostelView();
             hw.room1 = db.Rooms.Where(r => r.ID == allbeds.RoomId).First();
             hw.BookingBed.Amount = am;
